@@ -12,7 +12,7 @@ export default function Solution() {
     };
 
     return (
-        <section id="solution" className="section-padding bg-white relative overflow-hidden">
+        <section id="solution" className="pt-24 pb-8 bg-white relative overflow-hidden">
             {/* Minimal Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-40 pointer-events-none" />
 
@@ -38,7 +38,7 @@ export default function Solution() {
                 </div>
 
                 {/* Main Content Area - Staggered Focus */}
-                <div className="relative max-w-6xl mx-auto min-h-[500px] mb-20 pt-10">
+                <div className="relative max-w-6xl mx-auto mb-16 pt-10">
 
                     {/* Cards Grid with Anchored Adlibs */}
                     <div className="grid md:grid-cols-3 gap-8 items-start relative z-10 pt-8">

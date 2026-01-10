@@ -1,180 +1,475 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Bot, User, Sparkles, ArrowRight, CheckCircle2, RotateCcw, Calendar } from 'lucide-react';
 
 export default function Pricing() {
-    const [heatingCosts, setHeatingCosts] = useState(20000);
-    const savingsPercent = 15;
-    const annualSavings = Math.round(heatingCosts * (savingsPercent / 100));
-    const tenYearSavings = annualSavings * 10;
-
-    const scrollToContact = () => {
-        const element = document.querySelector('#contact');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
-        <section id="pricing" className="section-padding bg-gray-50">
-            <div className="container-custom">
-                {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
+        <section id="pricing" className="section-padding bg-gray-50 overflow-hidden relative min-h-[800px] flex items-center">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-50/50 to-transparent pointer-events-none" />
+
+            <div className="container-custom relative z-10 w-full">
+                <div className="text-center max-w-3xl mx-auto mb-12">
                     <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                        Ihr Einsparpotenzial
+                        KI-Analyse
                     </span>
                     <h2 className="mb-6">
-                        Eine Investition, die sich <span className="gradient-text">selbst bezahlt</span>
+                        Lassen Sie Ihre <span className="gradient-text">Ersparnis berechnen</span>
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Berechnen Sie Ihr individuelles Einsparpotenzial – schnell und unverbindlich.
+                        Unser AI-Assistent analysiert Ihre Situation in Sekunden und zeigt Ihnen Ihr Potenzial.
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                    {/* Calculator */}
-                    <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-10">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                            💰 Ihr persönlicher Sparrechner
-                        </h3>
-
-                        {/* Slider */}
-                        <div className="mb-8">
-                            <label className="block text-gray-700 font-medium mb-4">
-                                Ihre jährlichen Heizkosten:
-                            </label>
-                            <div className="relative">
-                                <input
-                                    type="range"
-                                    min="5000"
-                                    max="100000"
-                                    step="1000"
-                                    value={heatingCosts}
-                                    onChange={(e) => setHeatingCosts(Number(e.target.value))}
-                                    className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500"
-                                />
-                                <div className="flex justify-between text-sm text-gray-500 mt-2">
-                                    <span>5.000€</span>
-                                    <span>100.000€</span>
-                                </div>
-                            </div>
-                            <div className="text-center mt-4">
-                                <span className="text-4xl font-bold text-gray-900">
-                                    {heatingCosts.toLocaleString('de-DE')}€
-                                </span>
-                                <span className="text-gray-500 ml-2">/ Jahr</span>
-                            </div>
-                        </div>
-
-                        {/* Results */}
-                        <div className="space-y-4">
-                            <div className="bg-green-50 rounded-2xl p-6">
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className="text-gray-600">Jährliche Ersparnis</span>
-                                    <span className="text-sm bg-green-200 text-green-800 px-2 py-0.5 rounded-full">
-                                        {savingsPercent}%
-                                    </span>
-                                </div>
-                                <p className="text-3xl font-bold text-green-600">
-                                    {annualSavings.toLocaleString('de-DE')}€
-                                    <span className="text-lg font-normal text-gray-500 ml-2">pro Jahr</span>
-                                </p>
-                            </div>
-
-                            <div className="bg-gray-100 rounded-2xl p-6">
-                                <p className="text-gray-600 mb-1">Ersparnis über 10 Jahre</p>
-                                <p className="text-2xl font-bold text-gray-900">
-                                    {tenYearSavings.toLocaleString('de-DE')}€
-                                </p>
-                            </div>
-
-                            <div className="bg-orange-50 rounded-2xl p-6">
-                                <p className="text-orange-700 mb-1">+ 15% BAFA-Förderung möglich</p>
-                                <p className="text-sm text-orange-600">
-                                    Reduziert Ihre Investitionskosten zusätzlich
-                                </p>
-                            </div>
-                        </div>
-
-                        <button onClick={scrollToContact} className="btn btn-primary w-full mt-8">
-                            Individuelle Berechnung anfordern
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* Example Calculation */}
-                    <div>
-                        <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-10 mb-6">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6">
-                                📊 Beispielrechnung: Verwaltungsgebäude
-                            </h3>
-
-                            <div className="space-y-4">
-                                <div className="flex justify-between py-3 border-b border-gray-100">
-                                    <span className="text-gray-600">Beheizte Fläche</span>
-                                    <span className="font-semibold">1.000 m²</span>
-                                </div>
-                                <div className="flex justify-between py-3 border-b border-gray-100">
-                                    <span className="text-gray-600">Jährliche Heizkosten</span>
-                                    <span className="font-semibold">15.000€</span>
-                                </div>
-                                <div className="flex justify-between py-3 border-b border-gray-100">
-                                    <span className="text-gray-600">Einsparung (25%)</span>
-                                    <span className="font-semibold text-green-600">3.750€ / Jahr</span>
-                                </div>
-                                <div className="flex justify-between py-3 border-b border-gray-100">
-                                    <span className="text-gray-600">Investitionskosten</span>
-                                    <span className="font-semibold">ca. 11.500€</span>
-                                </div>
-                                <div className="flex justify-between py-3 border-b border-gray-100">
-                                    <span className="text-gray-600">BAFA-Förderung (15%)</span>
-                                    <span className="font-semibold text-green-600">-1.725€</span>
-                                </div>
-                                <div className="flex justify-between py-3 bg-green-50 rounded-xl px-4 -mx-4">
-                                    <span className="font-bold text-gray-900">Effektive Investition</span>
-                                    <span className="font-bold text-green-600">9.775€</span>
-                                </div>
-                            </div>
-
-                            <div className="mt-6 p-4 bg-gray-100 rounded-xl">
-                                <p className="text-gray-700 text-sm">
-                                    <strong>Amortisation:</strong> 9.775€ ÷ 3.750€ = <strong className="text-green-600">ca. 2,5 Jahre</strong>
-                                </p>
-                                <p className="text-gray-500 text-sm mt-2">
-                                    Danach: Jährlich 3.750€+ Ersparnis – dauerhaft!
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Trust Points */}
-                        <div className="bg-green-600 text-white rounded-2xl p-6">
-                            <h4 className="font-semibold mb-4">Das bedeutet für Sie:</h4>
-                            <ul className="space-y-2 text-green-100">
-                                <li className="flex items-center gap-2">
-                                    <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                    In 2-3 Jahren verdient sich die Investition selbst
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                    Über 10 Jahre: 30.000€+ Ersparnis
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <svg className="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                    </svg>
-                                    Staatliche Förderung senkt Ihre Kosten
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div className="max-w-5xl mx-auto h-[600px] perspective-[2000px]">
+                    <AIChatInterface />
                 </div>
             </div>
         </section>
     );
+}
+
+function AIChatInterface() {
+    const [messages, setMessages] = useState<Array<{ role: 'ai' | 'user'; text: string; id: string }>>([
+        {
+            role: 'ai',
+            text: 'Hallo! Ich bin Endo, Ihr persönlicher Energiespar-Assistent. Lassen Sie uns herausfinden, wie viel Sie sparen können. Wie hoch sind Ihre aktuellen jährlichen Heizkosten (ca. in €)?',
+            id: 'init'
+        }
+    ]);
+    const [inputValue, setInputValue] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const [step, setStep] = useState(0);
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    // Store user answers for the result card
+    const [answers, setAnswers] = useState({ cost: '', type: '', area: '' });
+
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const scrollToBottom = () => {
+        if (containerRef.current) {
+            containerRef.current.scrollTo({
+                top: containerRef.current.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isTyping, step]);
+
+    const handleSend = async () => {
+        if (!inputValue.trim()) return;
+
+        const userMsg = inputValue;
+        setMessages(prev => [...prev, { role: 'user', text: userMsg, id: Date.now().toString() }]);
+        setInputValue('');
+        setIsTyping(true);
+
+        // Save answers based on step
+        if (step === 0) setAnswers(prev => ({ ...prev, cost: userMsg }));
+        if (step === 1) setAnswers(prev => ({ ...prev, type: userMsg }));
+        if (step === 2) setAnswers(prev => ({ ...prev, area: userMsg }));
+
+        setTimeout(() => {
+            let nextQuestion = '';
+
+            if (step === 0) {
+                nextQuestion = 'Verstehe, das ist ein wichtiger Faktor. Welche Heizungsart nutzen Sie aktuell vorwiegend (z.B. Gas, Öl, Fernwärme)?';
+                setStep(1);
+            } else if (step === 1) {
+                nextQuestion = 'Danke für die Information. Und wie groß ist die zu beheizende Fläche ungefähr (in m²)?';
+                setStep(2);
+            } else if (step === 2) {
+                nextQuestion = 'Perfekt! Ich habe alle Daten. Ich analysiere jetzt Ihr Potenzial...';
+                setStep(3);
+
+                setTimeout(() => {
+                    setMessages(prev => [...prev, { role: 'ai', text: nextQuestion, id: 'analysis' }]);
+                    setIsTyping(false);
+                    // Trigger Flip after reading 'analysing'
+                    setTimeout(() => {
+                        setIsFlipped(true);
+                    }, 2000);
+                    return;
+                }, 100);
+                return;
+            }
+
+            setMessages(prev => [...prev, { role: 'ai', text: nextQuestion, id: Date.now().toString() }]);
+            setIsTyping(false);
+        }, 1200 + Math.random() * 800);
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            handleSend();
+        }
+    };
+
+    const resetChat = () => {
+        setIsFlipped(false);
+        setTimeout(() => {
+            setMessages([{
+                role: 'ai',
+                text: 'Willkommen zurück! Wollen wir eine neue Berechnung starten? Wie hoch sind Ihre aktuellen Heizkosten?',
+                id: Date.now().toString()
+            }]);
+            setStep(0);
+            setAnswers({ cost: '', type: '', area: '' });
+        }, 500); // Reset data while flipped back
+    };
+
+    return (
+        <div className="w-full h-full relative" style={{ transformStyle: 'preserve-3d' }}>
+            <motion.div
+                className="w-full h-full relative"
+                initial={false}
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{ duration: 0.8, type: "spring", stiffness: 60, damping: 12 }}
+                style={{ transformStyle: 'preserve-3d' }}
+            >
+                {/* FRONT FACE: Chat Interface */}
+                <div
+                    className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden flex flex-col md:flex-row"
+                    style={{ backfaceVisibility: 'hidden' }}
+                >
+                    {/* Sidebar / Context */}
+                    <div className="hidden md:flex w-1/3 bg-gray-50 p-8 flex-col justify-between border-r border-gray-100">
+                        <div>
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center shadow-lg shadow-green-600/20">
+                                    <Bot className="text-white w-6 h-6" />
+                                </div>
+                                <div>
+                                    <div className="font-bold text-gray-900">Endo AI</div>
+                                    <div className="text-xs text-green-600 flex items-center gap-1">
+                                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                        Online
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="space-y-6">
+                                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                                    <h4 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-2">
+                                        <Sparkles className="w-4 h-4 text-green-500" />
+                                        Echtzeit-Analyse
+                                    </h4>
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                        Beantworten Sie 3 kurze Fragen. Unsere AI vergleicht Ihre Daten sofort mit ähnlichen Gebäudeprofilen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="text-xs text-gray-400">
+                            Powered by N5 Solutions AI
+                        </div>
+                    </div>
+
+                    {/* Chat Area */}
+                    <div className="flex-1 flex flex-col relative bg-white">
+                        {/* Mobile Header */}
+                        <div className="md:hidden p-4 border-b border-gray-100 flex items-center gap-3 bg-gray-50">
+                            <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center">
+                                <Bot className="text-white w-5 h-5" />
+                            </div>
+                            <div>
+                                <div className="font-bold text-gray-900 text-sm">Endo AI</div>
+                                <div className="text-xs text-green-600">Online</div>
+                            </div>
+                        </div>
+
+                        <div ref={containerRef} className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth">
+                            <AnimatePresence mode='popLayout'>
+                                {messages.map((msg) => (
+                                    <motion.div
+                                        key={msg.id}
+                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                                    >
+                                        <div className={`flex items-end gap-2 max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'ai' ? 'bg-green-100' : 'bg-gray-100'}`}>
+                                                {msg.role === 'ai' ? <Bot className="w-5 h-5 text-green-700" /> : <User className="w-5 h-5 text-gray-700" />}
+                                            </div>
+                                            <div
+                                                className={`p-3 md:p-4 rounded-2xl text-[15px] leading-relaxed shadow-sm ${msg.role === 'user'
+                                                    ? 'bg-gray-900 text-white rounded-br-none'
+                                                    : 'bg-white border border-gray-100 text-gray-800 rounded-bl-none'
+                                                    }`}
+                                            >
+                                                {msg.text}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+
+                            {isTyping && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="flex justify-start"
+                                >
+                                    <div className="flex items-end gap-2">
+                                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                            <Bot className="w-5 h-5 text-green-700" />
+                                        </div>
+                                        <div className="bg-white border border-gray-100 p-4 rounded-2xl rounded-bl-none shadow-sm flex gap-1">
+                                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                            <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </div>
+
+                        {/* Input Area */}
+                        <div className="p-4 border-t border-gray-100 bg-white">
+                            <div className="relative flex items-center gap-2">
+                                <input
+                                    type="text"
+                                    value={inputValue}
+                                    onChange={(e) => setInputValue(e.target.value)}
+                                    onKeyDown={handleKeyDown}
+                                    placeholder="Ihre Antwort..."
+                                    disabled={isTyping}
+                                    autoFocus
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-full pl-6 pr-14 py-4 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+                                />
+                                <button
+                                    onClick={handleSend}
+                                    disabled={!inputValue.trim() || isTyping}
+                                    className="absolute right-2 p-2 bg-green-600 text-white rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-green-700 transition-colors shadow-md transform active:scale-95 duration-100"
+                                >
+                                    <Send className="w-5 h-5" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* BACK FACE: Result Card */}
+                <div
+                    className="absolute inset-0 h-full w-full backface-hidden bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center justify-center text-center p-8 md:p-16 border border-green-200"
+                    style={{
+                        backfaceVisibility: 'hidden',
+                        transform: 'rotateY(180deg)'
+                    }}
+                >
+                    <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-r from-green-400 to-emerald-600" />
+
+                    <ResultContent
+                        isFlipped={isFlipped}
+                        answers={answers}
+                        onReset={resetChat}
+                    />
+                </div>
+            </motion.div>
+        </div>
+    );
+}
+
+function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; answers: any; onReset: () => void }) {
+    const [showResults, setShowResults] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [loadingText, setLoadingText] = useState('Initialisiere...');
+
+    useEffect(() => {
+        if (isFlipped) {
+            setProgress(0);
+            setShowResults(false);
+
+            const duration = 2500; // 2.5 seconds total loading
+            const interval = 20;
+            const steps = duration / interval;
+            let currentStep = 0;
+
+            const timer = setInterval(() => {
+                currentStep++;
+                const newProgress = Math.min((currentStep / steps) * 100, 100);
+                setProgress(newProgress);
+
+                // Dynamic text phases based on progress
+                if (newProgress < 30) {
+                    setLoadingText(`Analysiere Verbrauch von ${answers.cost}...`);
+                } else if (newProgress < 65) {
+                    setLoadingText(`Berechne Potenzial für ${answers.type}-Heizung...`);
+                } else if (newProgress < 90) {
+                    setLoadingText(`Optimiere für ${answers.area}m² Gebäudefläche...`);
+                } else {
+                    setLoadingText('Erstelle Auswertung...');
+                }
+
+                if (currentStep >= steps) {
+                    clearInterval(timer);
+                    setTimeout(() => setShowResults(true), 300);
+                }
+            }, interval);
+
+            return () => clearInterval(timer);
+        } else {
+            setShowResults(false);
+            setProgress(0);
+        }
+    }, [isFlipped, answers]);
+
+    if (!showResults) {
+        return (
+            <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto px-4">
+                <div className="w-full h-1.5 bg-gray-100 rounded-full mb-6 overflow-hidden">
+                    <motion.div
+                        className="h-full bg-gradient-to-r from-green-400 to-green-600"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${progress}%` }}
+                        transition={{ ease: "linear", duration: 0.1 }}
+                    />
+                </div>
+                <motion.p
+                    key={loadingText}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-gray-500 font-medium text-center text-sm"
+                >
+                    {loadingText}
+                </motion.p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="w-full max-w-lg flex flex-col items-center">
+            <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ type: 'spring', delay: 0.1 }}
+                className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6"
+            >
+                <CheckCircle2 className="w-10 h-10 text-green-600" />
+            </motion.div>
+
+            <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-3xl font-bold text-gray-900 mb-2"
+            >
+                Analyse erfolgreich!
+            </motion.h3>
+
+            <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-xl text-gray-600 mb-8"
+            >
+                Wir haben für Ihre Angaben ({answers.area}m², {answers.type}) ein <span className="text-green-600 font-bold">signifikantes Einsparpotenzial</span> ermittelt.
+            </motion.p>
+
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="bg-green-50 rounded-2xl p-4 border border-green-100 flex flex-col items-center justify-center min-h-[120px]"
+                >
+                    <div className="text-sm text-green-700 font-medium mb-1">Mögliche Ersparnis</div>
+                    <div className="text-3xl font-bold text-green-800">
+                        <CountUp end={15} suffix="%" duration={2} />
+                    </div>
+                    <div className="text-xs text-green-600 mt-1">der Heizkosten</div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.6 }}
+                    className="bg-blue-50 rounded-2xl p-4 border border-blue-100 flex flex-col items-center justify-center min-h-[120px]"
+                >
+                    <div className="text-sm text-blue-700 font-medium mb-1">Amortisation</div>
+                    <div className="text-3xl font-bold text-blue-800 flex items-baseline gap-1">
+                        <span>&lt;</span>
+                        <CountUp end={14} duration={2.5} />
+                        <span className="text-xl">Monaten</span>
+                    </div>
+                    <div className="text-xs text-blue-600 mt-1">durch Förderung</div>
+                </motion.div>
+            </div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="w-full"
+            >
+                <div className="flex flex-col gap-3">
+                    <button
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="btn btn-primary w-full flex items-center justify-center gap-2 group text-lg py-4 shadow-xl shadow-green-600/20"
+                    >
+                        <Calendar className="w-5 h-5" />
+                        Expertengespräch vereinbaren
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+
+                    <button
+                        onClick={onReset}
+                        className="text-sm text-gray-400 hover:text-gray-600 flex items-center justify-center gap-1 transition-colors py-2"
+                    >
+                        <RotateCcw className="w-3 h-3" />
+                        Berechnung neu starten
+                    </button>
+                </div>
+            </motion.div>
+
+            <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
+                className="text-[10px] text-gray-400 mt-4 max-w-xs mx-auto leading-tight"
+            >
+                *Dies ist eine unverbindliche Schätzung basierend auf Durchschnittswerten. Die tatsächliche Ersparnis kann je nach Gebäudezustand und Nutzerverhalten variieren.
+            </motion.p>
+        </div>
+    );
+}
+
+// Simple CountUp Component
+function CountUp({ end, duration = 2, suffix = '' }: { end: number, duration?: number, suffix?: string }) {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        let startTime: number;
+        let animationFrame: number;
+
+        const animate = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / (duration * 1000), 1);
+
+            // Easing function (easeOutExpo)
+            const ease = (x: number) => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+
+            setCount(Math.floor(ease(percentage) * end));
+
+            if (progress < duration * 1000) {
+                animationFrame = requestAnimationFrame(animate);
+            } else {
+                setCount(end);
+            }
+        };
+
+        animationFrame = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrame);
+    }, [end, duration]);
+
+    return <>{count}{suffix}</>;
 }
