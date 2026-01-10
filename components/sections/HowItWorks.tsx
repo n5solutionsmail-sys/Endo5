@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useSpring, useTransform, useMotionValueEvent, useInView } from 'framer-motion';
 
 export default function HowItWorks() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -79,13 +79,13 @@ export default function HowItWorks() {
 
                 {/* Roadmap Container */}
                 <div className="relative max-w-4xl mx-auto pb-20">
-                    {/* Central Line - Background */}
-                    <div className="absolute left-[20px] lg:left-1/2 top-0 bottom-0 w-1 bg-gray-100 lg:-translate-x-1/2 rounded-full" />
+                    {/* Central Line - Background - Stops at the dot */}
+                    <div className="absolute left-[20px] lg:left-1/2 top-0 h-[calc(100%-80px)] w-1 bg-gray-100 lg:-translate-x-1/2 rounded-full" />
 
-                    {/* Central Line - Active Animation */}
+                    {/* Central Line - Active Animation - Also constrained */}
                     <motion.div
                         className="absolute left-[20px] lg:left-1/2 top-0 w-1 bg-gradient-to-b from-green-500 to-green-300 lg:-translate-x-1/2 rounded-full origin-top"
-                        style={{ height: "100%", scaleY }}
+                        style={{ height: "calc(100% - 80px)", scaleY }}
                     />
 
                     {/* Steps */}
@@ -100,32 +100,110 @@ export default function HowItWorks() {
                             alignment={index % 2 === 0 ? 'left' : 'right'}
                         />
                     ))}
-                </div>
 
-                {/* Bottom Message */}
-                <motion.div
-                    className="text-center mt-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                >
-                    <div className="inline-flex items-center gap-4 bg-white border border-green-100 shadow-lg shadow-green-500/5 rounded-2xl p-6 hover-lift">
-                        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                    {/* Final Step: "Kein Risiko" & Call Reveal */}
+                    <div className="relative pt-12 flex justify-center z-10">
+                        {/* Connecting Dot on Line */}
+                        <div className="absolute left-[20px] lg:left-1/2 top-0 -translate-x-1/2 translate-y-4">
+                            <div className="w-4 h-4 rounded-full bg-gray-200 ring-4 ring-white" />
                         </div>
-                        <div className="text-left">
-                            <p className="font-bold text-gray-900 text-lg">Kein Risiko, keine Verpflichtung</p>
-                            <p className="text-gray-500">Die Erstberatung ist 100% kostenlos und unverbindlich</p>
-                        </div>
+
+                        <FinalActionCard />
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
 }
+
+function FinalActionCard() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { margin: "-20% 0px -20% 0px", once: true });
+
+    // We latch the state once it comes into view
+    const [isActivated, setIsActivated] = useState(false);
+
+    if (isInView && !isActivated) {
+        setIsActivated(true);
+    }
+
+    const scrollToContact = () => {
+        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    return (
+        <div ref={ref} className="relative">
+            <div className={`
+                flex flex-col md:flex-row items-center gap-5
+                bg-white border-2 rounded-2xl p-6
+                shadow-xl shadow-green-900/5 
+                transition-all duration-700
+                ${isActivated ? 'border-green-400 shadow-green-500/10' : 'border-green-100'}
+            `}>
+                {/* Checkmark Icon */}
+                <div className="relative w-12 h-12 shrink-0">
+                    <div className={`
+                        absolute inset-0 rounded-full flex items-center justify-center transition-colors duration-700
+                        ${isActivated ? 'bg-green-500' : 'bg-green-100'}
+                     `}>
+                        <svg className={`w-6 h-6 transition-colors duration-700 ${isActivated ? 'text-white' : 'text-green-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <motion.path
+                                initial={{ pathLength: 0 }}
+                                animate={{ pathLength: isActivated ? 1 : 0 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={3}
+                                d="M5 13l4 4L19 7"
+                            />
+                        </svg>
+                    </div>
+                </div>
+
+                <div className="text-center md:text-left">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Kein Risiko, keine Verpflichtung</h3>
+                    <p className="text-gray-500 text-sm mb-4 md:mb-0">Die Erstberatung ist 100% kostenlos.</p>
+                </div>
+
+                {/* The "Phone" Reveal Button */}
+                <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{
+                        scale: isActivated ? 1 : 0.8,
+                        opacity: isActivated ? 1 : 0
+                    }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
+                >
+                    <button
+                        onClick={scrollToContact}
+                        className="
+                            flex items-center gap-2 px-5 py-2.5
+                            bg-green-600 text-white rounded-lg font-bold text-sm
+                            hover:bg-green-700 transition-all
+                            shadow-lg shadow-green-600/20 hover:shadow-green-600/40
+                            hover:-translate-y-0.5 whitespace-nowrap
+                        "
+                    >
+                        <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>Termin wählen</span>
+                    </button>
+                </motion.div>
+            </div>
+
+            {/* Glow backing */}
+            <motion.div
+                className="absolute inset-0 bg-green-500/20 blur-2xl -z-10 rounded-full"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isActivated ? 0.5 : 0 }}
+                transition={{ duration: 1 }}
+            />
+        </div>
+    );
+}
+
+function OldHowItWorksItem_Removed_Reference_Only() { } // Keeping file structure clean creates clearer diffs
 
 function HowItWorksItem({
     number,
