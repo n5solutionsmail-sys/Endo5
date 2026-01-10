@@ -83,7 +83,12 @@ body {
    Typography
    ======================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
@@ -154,6 +159,7 @@ p {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -170,6 +176,7 @@ p {
     opacity: 0;
     transform: scale(0.5);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -309,7 +316,108 @@ textarea:focus-visible {
 }
 
 .bg-pattern {
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
+
+/* ========================================
+   Grid Container - Logikdose style borders
+   ======================================== */
+
+.grid-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.grid-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #e5e7eb;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.grid-line-left {
+  left: calc((100vw - 1280px) / 2 + 1.5rem);
+}
+
+.grid-line-right {
+  right: calc((100vw - 1280px) / 2 + 1.5rem);
+}
+
+@media (max-width: 1280px) {
+  .grid-line-left {
+    left: 1.5rem;
+  }
+
+  .grid-line-right {
+    right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .grid-line-left {
+    left: 2rem;
+  }
+
+  .grid-line-right {
+    right: 2rem;
+  }
+}
+
+/* Section divider - horizontal line between sections */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc((100vw - 1280px) / 2 + 1.5rem);
+  right: calc((100vw - 1280px) / 2 + 1.5rem);
+  height: 1px;
+  background: #e5e7eb;
+}
+
+@media (max-width: 1280px) {
+  .section-divider::after {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .section-divider::after {
+    left: 2rem;
+    right: 2rem;
+  }
+}
+
+/* Header bottom border aligned with grid */
+.header-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc((100vw - 1280px) / 2 + 1.5rem);
+  right: calc((100vw - 1280px) / 2 + 1.5rem);
+  height: 1px;
+  background: #e5e7eb;
+}
+
+@media (max-width: 1280px) {
+  .header-border::after {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header-border::after {
+    left: 2rem;
+    right: 2rem;
+  }
 }

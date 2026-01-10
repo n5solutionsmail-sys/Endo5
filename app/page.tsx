@@ -12,16 +12,35 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Problem />
-      <Solution />
-      <HowItWorks />
-      <Benefits />
-      <Statistics />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
+      <div className="section-divider">
+        <Hero />
+      </div>
+      <div className="section-divider">
+        <Problem />
+      </div>
+      <div className="section-divider">
+        <Solution />
+      </div>
+      <div className="section-divider">
+        <HowItWorks />
+      </div>
+      <div className="section-divider">
+        <Benefits />
+      </div>
+      <div className="section-divider">
+        <Statistics />
+      </div>
+      <div className="section-divider">
+        <Testimonials />
+      </div>
+      <div className="section-divider">
+        <Pricing />
+      </div>
+      <div className="section-divider">
+        <FAQ />
+      </div>
       <Contact />
     </>
   );
 }
+
