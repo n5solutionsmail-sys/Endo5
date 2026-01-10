@@ -6,7 +6,7 @@ import { Send, Bot, User, Sparkles, ArrowRight, CheckCircle2, RotateCcw, Calenda
 
 export default function Pricing() {
     return (
-        <section id="pricing" className="section-padding bg-gray-50 overflow-hidden relative min-h-[800px] flex items-center">
+        <section id="pricing" className="section-padding bg-white overflow-hidden relative min-h-[800px] flex items-center">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-50/50 to-transparent pointer-events-none" />
 
@@ -49,6 +49,7 @@ function AIChatInterface() {
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const scrollToBottom = () => {
         if (containerRef.current) {
@@ -103,6 +104,13 @@ function AIChatInterface() {
 
             setMessages(prev => [...prev, { role: 'ai', text: nextQuestion, id: Date.now().toString() }]);
             setIsTyping(false);
+
+            // Auto-focus input after answer received
+            setTimeout(() => {
+                if (inputRef.current) {
+                    inputRef.current.focus();
+                }
+            }, 50);
         }, 1200 + Math.random() * 800);
     };
 
@@ -236,13 +244,13 @@ function AIChatInterface() {
                         <div className="p-4 border-t border-gray-100 bg-white">
                             <div className="relative flex items-center gap-2">
                                 <input
+                                    ref={inputRef}
                                     type="text"
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyDown={handleKeyDown}
                                     placeholder="Ihre Antwort..."
                                     disabled={isTyping}
-                                    autoFocus
                                     className="w-full bg-gray-50 border border-gray-200 rounded-full pl-6 pr-14 py-4 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                                 />
                                 <button
@@ -397,7 +405,7 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                     <div className="text-sm text-blue-700 font-medium mb-1">Amortisation</div>
                     <div className="text-3xl font-bold text-blue-800 flex items-baseline gap-1">
                         <span>&lt;</span>
-                        <CountUp end={14} duration={2.5} />
+                        <CountUp start={60} end={14} duration={2} />
                         <span className="text-xl">Monaten</span>
                     </div>
                     <div className="text-xs text-blue-600 mt-1">durch Förderung</div>
@@ -434,7 +442,7 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
-                className="text-[10px] text-gray-400 mt-4 max-w-xs mx-auto leading-tight"
+                className="text-[10px] text-gray-400 mt-4 max-w-md mx-auto leading-tight"
             >
                 *Dies ist eine unverbindliche Schätzung basierend auf Durchschnittswerten. Die tatsächliche Ersparnis kann je nach Gebäudezustand und Nutzerverhalten variieren.
             </motion.p>
@@ -443,8 +451,8 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
 }
 
 // Simple CountUp Component
-function CountUp({ end, duration = 2, suffix = '' }: { end: number, duration?: number, suffix?: string }) {
-    const [count, setCount] = useState(0);
+function CountUp({ start = 0, end, duration = 2, suffix = '' }: { start?: number, end: number, duration?: number, suffix?: string }) {
+    const [count, setCount] = useState(start);
 
     useEffect(() => {
         let startTime: number;
@@ -458,7 +466,8 @@ function CountUp({ end, duration = 2, suffix = '' }: { end: number, duration?: n
             // Easing function (easeOutExpo)
             const ease = (x: number) => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
 
-            setCount(Math.floor(ease(percentage) * end));
+            const currentVal = start + (end - start) * ease(percentage);
+            setCount(Math.floor(currentVal));
 
             if (progress < duration * 1000) {
                 animationFrame = requestAnimationFrame(animate);
@@ -469,7 +478,7 @@ function CountUp({ end, duration = 2, suffix = '' }: { end: number, duration?: n
 
         animationFrame = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationFrame);
-    }, [end, duration]);
+    }, [start, end, duration]);
 
     return <>{count}{suffix}</>;
 }

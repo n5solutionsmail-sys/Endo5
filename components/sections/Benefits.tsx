@@ -188,7 +188,7 @@ export default function Benefits() {
                                     ${!isExpanded ? 'absolute top-0 w-full max-w-sm shadow-2xl border-gray-200' : 'shadow-sm'}
                                 `}
                                 initial={{
-                                    rotateZ: Math.random() * 6 - 3,
+                                    rotateZ: ((index % 5) - 2) * 1.5,
                                     scale: 0.9,
                                     opacity: 0,
                                     y: 50
