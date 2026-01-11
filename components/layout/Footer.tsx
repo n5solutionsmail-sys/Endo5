@@ -11,9 +11,9 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-2 mb-5">
                             <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">T5</span>
+                                <span className="text-white font-bold text-xl">E5</span>
                             </div>
-                            <span className="font-bold text-xl text-gray-900">Term5</span>
+                            <span className="font-bold text-xl text-gray-900">Endo5</span>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
                             Heizkosten senken, ohne Umbau. Bis zu 15% sparen mit EndoTherm® –
@@ -58,8 +58,8 @@ export default function Footer() {
                         <h4 className="font-semibold text-gray-900 mb-5">Kontakt</h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href="mailto:info@term5.de" className="text-gray-500 hover:text-green-600 transition-colors text-sm inline-flex items-center gap-1.5">
-                                    info@term5.de
+                                <a href="mailto:info@endo5.de" className="text-gray-500 hover:text-green-600 transition-colors text-sm inline-flex items-center gap-1.5">
+                                    info@endo5.de
                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
@@ -102,7 +102,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-100 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-400 text-sm">
-                        © {currentYear} Term5. Alle Rechte vorbehalten.
+                        © {currentYear} Endo5. Alle Rechte vorbehalten.
                     </p>
                     <p className="text-gray-400 text-sm flex items-center gap-1.5">
                         Mit <span className="text-red-500">❤️</span> entwickelt
@@ -123,7 +123,7 @@ export default function Footer() {
                         top: '-10%',
                     }}
                 >
-                    TERM5
+                    ENDO5
                 </div>
             </div>
         </footer>

@@ -77,13 +77,13 @@ export default function Contact() {
                         </div>
                         <span className="font-medium">+49 40 123 456 789</span>
                     </a>
-                    <a href="mailto:info@term5.de" className="flex items-center gap-3 text-gray-600 hover:text-green-600 transition-colors">
+                    <a href="mailto:info@endo5.de" className="flex items-center gap-3 text-gray-600 hover:text-green-600 transition-colors">
                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                             <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <span className="font-medium">info@term5.de</span>
+                        <span className="font-medium">info@endo5.de</span>
                     </a>
                 </div>
             </div>

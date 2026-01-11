@@ -41,9 +41,9 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">T5</span>
+                        <span className="text-white font-bold text-xl">E5</span>
                     </div>
-                    <span className="font-bold text-xl text-gray-900">Term5</span>
+                    <span className="font-bold text-xl text-gray-900">Endo5</span>
                 </Link>
 
                 {/* Desktop Navigation */}
