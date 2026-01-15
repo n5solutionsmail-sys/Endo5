@@ -28,8 +28,9 @@ export default function Hero() {
 
                     {/* Subheadline - simple and clear */}
                     <p className="text-xl lg:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Bis zu <strong className="text-gray-900">15% weniger Heizkosten</strong> mit
-                        EndoTherm® – einfach dem Heizwasser zugeben, fertig.
+                        Bis zu <strong className="text-gray-900">15% weniger Heizkosten</strong> mit EndoTherm®
+                        <br />
+                        einfach dem Heizwasser zugeben, fertig.
                     </p>
 
                     {/* Single Primary CTA */}

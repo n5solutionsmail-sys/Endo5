@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <footer className="bg-white overflow-hidden mt-16">
             <div className="container-custom pt-16 pb-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
                     {/* Brand */}
-                    <div className="lg:col-span-1">
+                    <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-5">
                             <Image
                                 src="/5a93a8c5-b777-4800-b402-22703273c049.png"

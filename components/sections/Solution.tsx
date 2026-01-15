@@ -88,7 +88,7 @@ export default function Solution() {
                             {/* Tag: Bottom Left of Card 2 */}
                             <div className="hidden lg:block">
                                 <AdlibTag
-                                    text="Staatlich gefördert"
+                                    text="10 Jahre Garantie"
                                     className="absolute -bottom-5 -left-4 rotate-[-2deg] z-20"
                                     delay={0.7}
                                 />
@@ -122,7 +122,7 @@ export default function Solution() {
                     <div className="lg:hidden flex flex-wrap gap-3 justify-center mt-12">
                         <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">Keine Betriebsunterbrechung</span>
                         <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">100% organisch</span>
-                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">Staatlich gefördert</span>
+                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">10 Jahre Garantie</span>
                         <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">TÜV-geprüft</span>
                     </div>
 
@@ -169,14 +169,13 @@ function FeatureCard({ title, description, icon, delay, isHighlight = false }: {
 function AdlibTag({ text, className, delay }: { text: string, className: string, delay: number }) {
     return (
         <motion.div
-            className={`bg-white text-gray-800 px-6 py-3 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-green-100 text-sm whitespace-nowrap cursor-default hover-lift ${className}`}
-            initial={{ scale: 0, opacity: 0 }}
+            className={`bg-white text-gray-800 px-6 py-3 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-green-100 text-sm whitespace-nowrap cursor-default transition-transform duration-200 hover:scale-105 ${className}`}
+            initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
+                duration: 0.3,
+                ease: "easeOut",
                 delay
             }}
         >
