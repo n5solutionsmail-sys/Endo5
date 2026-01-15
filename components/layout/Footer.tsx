@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -10,10 +11,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <div className="flex items-center gap-2 mb-5">
-                            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">E5</span>
-                            </div>
-                            <span className="font-bold text-xl text-gray-900">Endo5</span>
+                            <Image
+                                src="/5a93a8c5-b777-4800-b402-22703273c049.png"
+                                alt="N5 Logo"
+                                width={160}
+                                height={64}
+                                className="h-14 w-auto"
+                            />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
                             Heizkosten senken, ohne Umbau. Bis zu 15% sparen mit EndoTherm® –
@@ -100,13 +104,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-100 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-400 text-sm">
-                        © {currentYear} Endo5. Alle Rechte vorbehalten.
-                    </p>
-                    <p className="text-gray-400 text-sm flex items-center gap-1.5">
-                        Mit <span className="text-red-500">❤️</span> entwickelt
-                    </p>
+                <div className="border-t border-gray-100 mt-16 pt-8">
                 </div>
             </div>
 

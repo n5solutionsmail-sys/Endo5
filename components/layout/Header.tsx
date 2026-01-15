@@ -42,11 +42,11 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center pl-4">
                     <Image
-                        src="/Gemini_Generated_Image_z0wwl5z0wwl5z0ww.png"
+                        src="/5a93a8c5-b777-4800-b402-22703273c049.png"
                         alt="N5 Logo"
-                        width={180}
-                        height={72}
-                        className="h-16 w-auto"
+                        width={220}
+                        height={88}
+                        className="h-20 w-auto"
                         priority
                     />
                 </Link>
