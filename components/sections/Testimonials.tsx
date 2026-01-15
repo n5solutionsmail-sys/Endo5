@@ -18,7 +18,7 @@ const testimonials = [
         rating: 5,
     },
     {
-        quote: 'Endlich eine Lösung, die funktioniert, ohne dass wir unser altes Gebäude komplett sanieren müssen. Die BAFA-Förderung hat die Investition noch attraktiver gemacht.',
+        quote: 'Endlich eine Lösung, die funktioniert, ohne dass wir unser altes Gebäude komplett sanieren müssen. Die schnelle Amortisation hat uns überzeugt.',
         author: 'Dr. Thomas Weber',
         role: 'Schulleiter, Grundschule',
         savings: '6.200€/Jahr',
@@ -117,8 +117,8 @@ export default function Testimonials() {
                                     key={index}
                                     onClick={() => setActiveIndex(index)}
                                     className={`w-3 h-3 rounded-full transition-all ${index === activeIndex
-                                            ? 'bg-green-500 w-8'
-                                            : 'bg-gray-300 hover:bg-gray-400'
+                                        ? 'bg-green-500 w-8'
+                                        : 'bg-gray-300 hover:bg-gray-400'
                                         }`}
                                     aria-label={`Go to testimonial ${index + 1}`}
                                 />

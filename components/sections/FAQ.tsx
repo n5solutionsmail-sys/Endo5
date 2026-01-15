@@ -13,7 +13,7 @@ const faqItems = [
     },
     {
         question: 'Wie schnell amortisiert sich die Investition?',
-        answer: 'In den meisten Fällen amortisiert sich EndoTherm® innerhalb von 12-24 Monaten. Mit der BAFA-Förderung (15%) geht es noch schneller. Danach sparen Sie Jahr für Jahr bares Geld.',
+        answer: 'In den meisten Fällen amortisiert sich EndoTherm® innerhalb von 12-24 Monaten. Danach sparen Sie Jahr für Jahr bares Geld – ohne weitere Investitionen.',
     },
     {
         question: 'Wie lange hält die Wirkung an?',
@@ -28,8 +28,8 @@ const faqItems = [
         answer: 'Absolut. EndoTherm® ist 100% organisch, nicht korrosiv und VDI 2035 kompatibel. Es schadet weder Ihrer Heizungsanlage noch der Umwelt. Die Produktion verursacht nur 1,16 kg CO₂ pro Liter – das wird bereits am ersten Nutzungstag ausgeglichen.',
     },
     {
-        question: 'Gibt es staatliche Förderungen?',
-        answer: 'Ja! Das BAFA (Bundesamt für Wirtschaft und Ausfuhrkontrolle) fördert EndoTherm® mit 15% der Investitionskosten. Das reduziert Ihre Ausgaben und beschleunigt die Amortisation deutlich.',
+        question: 'Ist EndoTherm® wissenschaftlich getestet?',
+        answer: 'Ja! EndoTherm® wurde von unabhängigen Instituten getestet und zertifiziert. Die Wirksamkeit ist durch zahlreiche Studien und Praxistests belegt.',
     },
     {
         question: 'Wie kann ich einen Beratungstermin vereinbaren?',

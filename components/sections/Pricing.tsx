@@ -408,7 +408,7 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                         <CountUp start={60} end={14} duration={2} />
                         <span className="text-xl">Monaten</span>
                     </div>
-                    <div className="text-xs text-blue-600 mt-1">durch Förderung</div>
+                    <div className="text-xs text-blue-600 mt-1">bei durchschnittlicher Nutzung</div>
                 </motion.div>
             </div>
 

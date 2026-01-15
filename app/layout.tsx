@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Endo5 | Heizkosten senken – bis zu 15% sparen mit EndoTherm®",
   description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® – der smarten Lösung für Ihr Heizsystem. Jetzt kostenlos beraten lassen!",
-  keywords: "Heizkosten senken, Heizkosten sparen, EndoTherm, Heizungsoptimierung, Energiekosten reduzieren, BAFA Förderung",
+  keywords: "Heizkosten senken, Heizkosten sparen, EndoTherm, Heizungsoptimierung, Energiekosten reduzieren, Heizung optimieren",
   openGraph: {
     title: "Endo5 | Heizkosten senken – bis zu 15% sparen",
     description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm®.",

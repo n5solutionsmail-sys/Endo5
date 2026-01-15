@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navItems = [
     { label: 'Lösung', href: '#solution' },
@@ -39,11 +40,15 @@ export default function Header() {
         >
             <div className="container-custom flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">E5</span>
-                    </div>
-                    <span className="font-bold text-xl text-gray-900">Endo5</span>
+                <Link href="/" className="flex items-center">
+                    <Image
+                        src="/N5_Logo.png"
+                        alt="N5 Logo"
+                        width={100}
+                        height={40}
+                        className="h-10 w-auto"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
