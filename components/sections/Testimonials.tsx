@@ -1,48 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-
-const testimonials = [
-    {
-        quote: 'Wir waren skeptisch, aber die Zahlen sprechen für sich. Unsere Heizkosten sind um 18% gesunken – das sind über 4.500€ pro Jahr, die wir jetzt anderweitig investieren können.',
-        author: 'Michael Schneider',
-        role: 'Geschäftsführer, Mittelständischer Betrieb',
-        savings: '4.500€/Jahr',
-        rating: 5,
-    },
-    {
-        quote: 'Die Installation dauerte keine 2 Stunden. Keine Unterbrechung, kein Dreck, einfach fertig. Und die Einsparung bei der nächsten Abrechnung war sofort sichtbar.',
-        author: 'Sandra Müller',
-        role: 'Hausverwalterin, 12 Wohneinheiten',
-        savings: '2.800€/Jahr',
-        rating: 5,
-    },
-    {
-        quote: 'Endlich eine Lösung, die funktioniert, ohne dass wir unser altes Gebäude komplett sanieren müssen. Die schnelle Amortisation hat uns überzeugt.',
-        author: 'Dr. Thomas Weber',
-        role: 'Schulleiter, Grundschule',
-        savings: '6.200€/Jahr',
-        rating: 5,
-    },
-    {
-        quote: 'Nach 3 Wintern kann ich bestätigen: Die Einsparung bleibt konstant. Beste Investition, die wir für unser Mehrfamilienhaus getätigt haben.',
-        author: 'Familie Bergmann',
-        role: 'Eigentümer, Mehrfamilienhaus',
-        savings: '3.100€/Jahr',
-        rating: 5,
-    },
-];
+import { caseStudies } from '@/data/caseStudies';
 
 export default function Testimonials() {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const nextTestimonial = () => {
-        setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    const nextCase = () => {
+        setActiveIndex((prev) => (prev + 1) % caseStudies.length);
     };
 
-    const prevTestimonial = () => {
-        setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    const prevCase = () => {
+        setActiveIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
     };
+
+    const activeCase = caseStudies[activeIndex];
 
     return (
         <section className="section-padding bg-white">
@@ -50,91 +22,187 @@ export default function Testimonials() {
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                        Kundenstimmen
+                        Fallstudien
                     </span>
                     <h2 className="mb-6">
-                        Was unsere Kunden <span className="gradient-text">über uns sagen</span>
+                        Echte Ergebnisse aus <span className="gradient-text">echten Projekten</span>
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Echte Erfahrungen von echten Kunden – mit echten Einsparungen.
+                        Entdecken Sie, wie unsere Kunden messbare Einsparungen erzielen.
                     </p>
                 </div>
 
-                {/* Testimonial Carousel */}
-                <div className="relative max-w-4xl mx-auto">
-                    {/* Main Testimonial */}
-                    <div className="bg-gray-50 rounded-3xl p-8 lg:p-12 relative">
-                        {/* Quote Icon */}
-                        <div className="absolute top-6 left-6 text-green-200">
-                            <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                            </svg>
-                        </div>
+                {/* Case Study Cards Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+                    {caseStudies.map((study, index) => (
+                        <button
+                            key={study.id}
+                            onClick={() => setActiveIndex(index)}
+                            className={`text-left rounded-xl border-2 transition-all duration-300 overflow-hidden flex flex-col ${index === activeIndex
+                                ? 'border-green-500 shadow-lg'
+                                : 'border-gray-200 hover:border-green-300 hover:shadow-md'
+                                }`}
+                        >
+                            {/* Image Section with badge overlay */}
+                            <div
+                                className="relative h-28 bg-cover bg-center bg-gray-100"
+                                style={{ backgroundImage: `url(${study.imagePath})` }}
+                            >
+                                {/* Building Type Badge - positioned in image */}
+                                <span className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm ${index === activeIndex
+                                    ? 'bg-green-500/90 text-white'
+                                    : 'bg-white/90 text-gray-700'
+                                    }`}>
+                                    {study.buildingType}
+                                </span>
+                            </div>
 
-                        {/* Stars */}
-                        <div className="flex gap-1 mb-6 relative z-10">
-                            {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                                <svg key={i} className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            {/* Content Section */}
+                            <div className={`p-3 flex-1 ${index === activeIndex
+                                ? 'bg-green-50'
+                                : 'bg-white'
+                                }`}>
+
+                                {/* Title */}
+                                <h3 className="font-bold text-gray-900 text-sm mb-0.5 truncate">
+                                    {study.title.split('–')[0].trim()}
+                                </h3>
+
+                                {/* Location */}
+                                <p className="text-xs text-gray-500 truncate mb-1.5">
+                                    {study.location}
+                                </p>
+
+                                {/* Savings Highlight */}
+                                <div className={`text-lg font-bold ${index === activeIndex ? 'text-green-600' : 'text-gray-900'
+                                    }`}>
+                                    {study.savings.percentage}
+                                </div>
+                            </div>
+                        </button>
+                    ))}
+                </div>
+
+                {/* Active Case Study Detail */}
+                <div className="bg-gradient-to-br from-gray-50 to-green-50 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+                    {/* Background decoration */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-green-200 rounded-full opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+
+                    <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
+                        {/* Left: Details */}
+                        <div>
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                                    {activeCase.buildingType}
+                                </span>
+                                <span className="text-gray-500 text-sm">
+                                    Installiert {activeCase.installDate}
+                                </span>
+                            </div>
+
+                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                                {activeCase.title}
+                            </h3>
+                            <p className="text-gray-500 flex items-center gap-2 mb-6">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                            ))}
+                                {activeCase.location}
+                            </p>
+
+                            <p className="text-gray-600 mb-8 leading-relaxed">
+                                {activeCase.description}
+                            </p>
+
+                            {/* Download Button */}
+                            <a
+                                href={activeCase.pdfPath}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Fallstudie herunterladen (PDF)
+                            </a>
                         </div>
 
-                        {/* Quote */}
-                        <blockquote className="text-xl lg:text-2xl text-gray-800 font-medium mb-8 relative z-10">
-                            &ldquo;{testimonials[activeIndex].quote}&rdquo;
-                        </blockquote>
-
-                        {/* Author & Savings */}
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                            <div>
-                                <p className="font-bold text-gray-900">{testimonials[activeIndex].author}</p>
-                                <p className="text-gray-500">{testimonials[activeIndex].role}</p>
+                        {/* Right: Stats Cards */}
+                        <div className="grid grid-cols-3 gap-3">
+                            {/* Percentage Savings */}
+                            <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mb-2">
+                                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                </div>
+                                <p className="text-xs text-gray-500">Einsparung</p>
+                                <p className="text-lg font-bold text-green-600">{activeCase.savings.percentage}</p>
                             </div>
-                            <div className="bg-green-100 text-green-700 px-4 py-2 rounded-xl">
-                                <p className="text-sm text-green-600">Ersparnis</p>
-                                <p className="font-bold text-lg">{testimonials[activeIndex].savings}</p>
+
+                            {/* Financial Savings */}
+                            <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
+                                    <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <p className="text-xs text-gray-500">Finanziell</p>
+                                <p className="text-sm font-bold text-gray-900">{activeCase.savings.financial}</p>
+                            </div>
+
+                            {/* CO2 Savings */}
+                            <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
+                                <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mb-2">
+                                    <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <p className="text-xs text-gray-500">CO₂ gespart</p>
+                                <p className="text-sm font-bold text-gray-900">{activeCase.savings.co2}</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Navigation */}
-                    <div className="flex items-center justify-center gap-4 mt-8">
-                        <button
-                            onClick={prevTestimonial}
-                            className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-all"
-                            aria-label="Previous testimonial"
-                        >
-                            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
+                {/* Navigation Arrows */}
+                <div className="flex items-center justify-center gap-4 mt-8">
+                    <button
+                        onClick={prevCase}
+                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-all"
+                        aria-label="Previous case study"
+                    >
+                        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
 
-                        {/* Dots */}
-                        <div className="flex gap-2">
-                            {testimonials.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => setActiveIndex(index)}
-                                    className={`w-3 h-3 rounded-full transition-all ${index === activeIndex
-                                        ? 'bg-green-500 w-8'
-                                        : 'bg-gray-300 hover:bg-gray-400'
-                                        }`}
-                                    aria-label={`Go to testimonial ${index + 1}`}
-                                />
-                            ))}
-                        </div>
-
-                        <button
-                            onClick={nextTestimonial}
-                            className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-all"
-                            aria-label="Next testimonial"
-                        >
-                            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
+                    {/* Dots */}
+                    <div className="flex gap-2">
+                        {caseStudies.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setActiveIndex(index)}
+                                className={`w-3 h-3 rounded-full transition-all ${index === activeIndex
+                                    ? 'bg-green-500 w-8'
+                                    : 'bg-gray-300 hover:bg-gray-400'
+                                    }`}
+                                aria-label={`Go to case study ${index + 1}`}
+                            />
+                        ))}
                     </div>
+
+                    <button
+                        onClick={nextCase}
+                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-green-50 hover:border-green-500 transition-all"
+                        aria-label="Next case study"
+                    >
+                        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>

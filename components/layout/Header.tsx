@@ -40,13 +40,13 @@ export default function Header() {
         >
             <div className="container-custom flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center pl-4">
                     <Image
-                        src="/N5_Logo.png"
+                        src="/Gemini_Generated_Image_z0wwl5z0wwl5z0ww.png"
                         alt="N5 Logo"
-                        width={100}
-                        height={40}
-                        className="h-10 w-auto"
+                        width={180}
+                        height={72}
+                        className="h-16 w-auto"
                         priority
                     />
                 </Link>
@@ -66,11 +66,11 @@ export default function Header() {
                 </nav>
 
                 {/* CTA Button */}
-                <div className="hidden lg:block">
+                <div className="hidden lg:block pr-4">
                     <a
                         href="#contact"
                         onClick={(e) => scrollToSection(e, '#contact')}
-                        className="btn btn-primary"
+                        className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:-translate-y-0.5"
                     >
                         Kostenlose Beratung
                     </a>
