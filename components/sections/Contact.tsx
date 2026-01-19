@@ -22,7 +22,7 @@ export default function Contact() {
                         "cal-bg-emphasis": "#f9fafb",
                     },
                     "dark": {
-                        "cal-brand": "#22c55e",
+                        "cal-brand": "#21a454",
                         "cal-brand-emphasis": "#16a34a",
                         "cal-brand-text": "#ffffff",
                     }
