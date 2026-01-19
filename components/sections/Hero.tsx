@@ -57,9 +57,9 @@ export default function Hero() {
         }
     };
 
-    // Stronger text shadows for readability over nature imagery
-    const textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4)';
-    const accentShadow = '0 2px 8px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3)';
+    // Consistent text shadows - lighter for cleaner look
+    const textShadow = '0 1px 4px rgba(0,0,0,0.4), 0 2px 12px rgba(0,0,0,0.25)';
+    const accentShadow = textShadow;
 
     return (
         <section ref={containerRef} className="relative h-[400vh]">
@@ -135,15 +135,25 @@ export default function Hero() {
                                 </span>
                             </h1>
 
-                            {/* Subheadline */}
-                            <p
-                                className="text-xl lg:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed font-light"
-                                style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
+                            {/* Subheadline - Subtle pill */}
+                            <div
+                                className="inline-block px-5 py-2.5 rounded-xl mb-12 max-w-xl mx-auto"
+                                style={{
+                                    background: 'rgba(255,255,255,0.05)',
+                                    backdropFilter: 'blur(8px)',
+                                    WebkitBackdropFilter: 'blur(8px)',
+                                    border: '1px solid rgba(255,255,255,0.05)',
+                                }}
                             >
-                                Bis zu <strong className="font-semibold">15% weniger Heizkosten</strong> mit EndoTherm®
-                                <br />
-                                einfach dem Heizwasser zugeben, fertig.
-                            </p>
+                                <p
+                                    className="text-base lg:text-lg leading-relaxed font-light"
+                                    style={{ color: 'rgba(255,255,255,0.95)' }}
+                                >
+                                    Bis zu <strong className="font-semibold">15% weniger Heizkosten</strong> mit EndoTherm®
+                                    <br />
+                                    einfach dem Heizwasser zugeben, fertig.
+                                </p>
+                            </div>
 
                             {/* CTA Buttons - Solid with larger hover lift */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

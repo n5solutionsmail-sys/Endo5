@@ -28,8 +28,9 @@ export default function Solution() {
                         <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                             Die Lösung
                         </span>
-                        <h2 className="mb-6">
-                            EndoTherm® – <span className="gradient-text">Sofort sparen</span>, ohne Umbau
+                        <h2 className="mb-6 text-center">
+                            <span className="block">EndoTherm®</span>
+                            <span className="block mt-2 text-gray-500 text-3xl md:text-4xl font-semibold">Sofort sparen, ohne Umbau</span>
                         </h2>
                         <p className="text-xl text-gray-600">
                             Keine Sanierung, keine komplexen Systeme. Einfach effizienter heizen.

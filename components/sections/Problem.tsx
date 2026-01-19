@@ -41,9 +41,9 @@ export default function Problem() {
                         {/* Connecting Line (Desktop only) */}
                         <div className="hidden lg:block absolute top-1/2 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-transparent via-blue-200 to-transparent transform -translate-y-1/2 z-0" />
 
-                        {/* Card 1 - Rising Costs */}
+                        {/* Card 1 - Rising Costs (shortest) */}
                         <motion.div
-                            className="relative z-10"
+                            className="relative z-10 lg:mt-16"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -69,7 +69,7 @@ export default function Problem() {
                             </div>
                         </motion.div>
 
-                        {/* Card 2 - Inefficiency */}
+                        {/* Card 2 - Inefficiency (medium) */}
                         <motion.div
                             className="relative z-10 lg:mt-8"
                             initial={{ opacity: 0, y: 40 }}
@@ -97,7 +97,7 @@ export default function Problem() {
                             </div>
                         </motion.div>
 
-                        {/* Card 3 - Barrier */}
+                        {/* Card 3 - Barrier (tallest) */}
                         <motion.div
                             className="relative z-10"
                             initial={{ opacity: 0, y: 40 }}
