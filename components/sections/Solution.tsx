@@ -25,7 +25,7 @@ export default function Solution() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                             Die Lösung
                         </span>
                         <h2 className="mb-6">
@@ -70,7 +70,7 @@ export default function Solution() {
                             <div className="hidden lg:block">
                                 <AdlibTag
                                     text="100% organisch"
-                                    className="absolute -top-5 -right-4 rotate-[3deg] z-20 bg-green-50 border-green-200 text-green-800"
+                                    className="absolute -top-5 -right-4 rotate-[3deg] z-20 bg-[#21a454]/10 border-[#21a454]/20 text-[#1a8a45]"
                                     delay={0.5}
                                 />
                             </div>
@@ -120,10 +120,10 @@ export default function Solution() {
 
                     {/* Mobile Adlibs (Visible only on small screens below grid) */}
                     <div className="lg:hidden flex flex-wrap gap-3 justify-center mt-12">
-                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">Keine Betriebsunterbrechung</span>
-                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">100% organisch</span>
-                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">10 Jahre Garantie</span>
-                        <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">TÜV-geprüft</span>
+                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">Keine Betriebsunterbrechung</span>
+                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">100% organisch</span>
+                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">10 Jahre Garantie</span>
+                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">TÜV-geprüft</span>
                     </div>
 
                 </div>
@@ -136,7 +136,7 @@ export default function Solution() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
                 >
-                    <button onClick={scrollToContact} className="btn btn-primary text-lg px-10 py-4 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <button onClick={scrollToContact} className="btn btn-primary text-lg px-10 py-4 transition-all hover:-translate-y-1">
                         Jetzt Einsparpotential berechnen
                     </button>
                     <p className="mt-4 text-sm text-gray-400">Dauerhaft • Wartungsfrei • Rentabel</p>
@@ -150,14 +150,14 @@ function FeatureCard({ title, description, icon, delay, isHighlight = false }: {
     return (
         <motion.div
             className={`p-8 rounded-3xl border transition-all h-full ${isHighlight
-                ? 'bg-white border-green-100 shadow-xl shadow-green-900/5 ring-1 ring-green-500/10'
+                ? 'bg-white border-[#21a454]/20 shadow-xl shadow-[#21a454]/5 ring-1 ring-[#21a454]/10'
                 : 'bg-gray-50 border-transparent hover:bg-white hover:border-gray-100 hover:shadow-lg'}`}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
         >
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${isHighlight ? 'bg-green-500 text-white shadow-lg shadow-green-500/30' : 'bg-white text-green-600 shadow-sm'}`}>
+            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${isHighlight ? 'bg-[#21a454] text-white shadow-lg shadow-[#21a454]/30' : 'bg-white text-[#21a454] shadow-sm'}`}>
                 {icon}
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>

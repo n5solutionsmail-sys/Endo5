@@ -7,7 +7,7 @@ export default function HowItWorks() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start 0.8", "end 0.65"]
+        offset: ["start 0.8", "end 0.9"]
     });
 
     const scaleY = useSpring(scrollYProgress, {
@@ -15,6 +15,18 @@ export default function HowItWorks() {
         damping: 30,
         restDelta: 0.001
     });
+
+    // ... (lines 19-90)
+
+                    {/* Central Line - Active Animation with fade */}
+                    <motion.div
+                        className="absolute left-[20px] lg:left-1/2 top-0 w-1 lg:-translate-x-1/2 rounded-full origin-top"
+                        style={{ 
+                            height: "100%", 
+                            scaleY,
+                            background: 'linear-gradient(to bottom, #21a454 0%, #21a454 95%, transparent 100%)'
+                        }}
+                    />
 
     const steps = [
         {
@@ -64,7 +76,7 @@ export default function HowItWorks() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                             Der Prozess
                         </span>
                         <h2 className="mb-6">
@@ -115,14 +127,14 @@ export default function HowItWorks() {
 
                 {/* Clean CTA Section - Enhanced with more visual appeal */}
                 <motion.div 
-                    className="max-w-2xl mx-auto text-center mt-16 py-16 px-8 rounded-3xl bg-gradient-to-br from-green-50/80 via-white to-emerald-50/60 backdrop-blur-sm border border-green-100/50 shadow-lg shadow-green-100/20"
+                    className="max-w-2xl mx-auto text-center mt-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     {/* Success Badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/80 text-green-700 px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-sm border border-green-100">
+                    <div className="inline-flex items-center gap-2 bg-white/80 text-[#1a8a45] px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-sm border border-[#21a454]/20">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -133,17 +145,16 @@ export default function HowItWorks() {
                         Bereit für den ersten Schritt?
                     </h3>
                     <p className="text-lg text-gray-600 mb-10">
-                        Die Erstberatung ist <span className="text-green-600 font-semibold">100% kostenlos</span>.
+                        Die Erstberatung ist <span className="text-[#21a454] font-semibold">100% kostenlos</span>.
                     </p>
 
                     <button
                         onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                         className="
-                            inline-flex items-center gap-3 px-10 py-5
-                            bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl font-bold text-lg
-                            hover:from-green-600 hover:to-green-700 hover:-translate-y-1 hover:shadow-2xl
+                            btn btn-primary gap-3 px-10 py-5 text-lg font-bold
+                            rounded-2xl
+                            hover:-translate-y-1
                             transition-all duration-300
-                            shadow-xl shadow-green-600/30
                         "
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,11 +197,11 @@ function HowItWorksItem({
             >
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                     <div className={`flex items-center gap-4 mb-4 ${alignment === 'left' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-                        <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300 shrink-0">
+                        <div className="w-12 h-12 bg-[#21a454]/10 rounded-xl flex items-center justify-center text-[#21a454] group-hover:bg-[#21a454] group-hover:text-white transition-colors duration-300 shrink-0">
                             {icon}
                         </div>
                         <div>
-                            <div className={`text-sm font-bold text-green-600 mb-1 ${alignment === 'left' ? 'lg:text-right' : ''}`}>SCHRITT {number}</div>
+                            <div className={`text-sm font-bold text-[#21a454] mb-1 ${alignment === 'left' ? 'lg:text-right' : ''}`}>SCHRITT {number}</div>
                             <h3 className="text-xl font-bold text-gray-900">{title}</h3>
                         </div>
                     </div>
@@ -200,7 +211,7 @@ function HowItWorksItem({
                     </p>
 
                     <div className={`inline-flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full ${alignment === 'left' ? 'lg:flex-row-reverse' : ''}`}>
-                        <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[#21a454]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span className="text-sm font-medium text-gray-500">{duration}</span>
@@ -217,7 +228,7 @@ function HowItWorksItem({
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
                 >
-                    <div className="w-4 h-4 bg-green-500 rounded-full" />
+                    <div className="w-4 h-4 bg-[#21a454] rounded-full" />
                 </motion.div>
             </div>
 

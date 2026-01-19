@@ -11,8 +11,8 @@ export default function Contact() {
                 "theme": "light",
                 "cssVarsPerTheme": {
                     "light": {
-                        "cal-brand": "#16a34a",
-                        "cal-brand-emphasis": "#15803d",
+                        "cal-brand": "#21a454",
+                        "cal-brand-emphasis": "#1a8a45",
                         "cal-brand-text": "#ffffff",
                         "cal-text": "#1f2937",
                         "cal-text-emphasis": "#111827",
@@ -38,7 +38,7 @@ export default function Contact() {
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         Termin buchen
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

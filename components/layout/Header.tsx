@@ -58,7 +58,7 @@ export default function Header() {
                             key={item.href}
                             href={item.href}
                             onClick={(e) => scrollToSection(e, item.href)}
-                            className="text-gray-700 hover:text-green-600 font-medium transition-colors"
+                            className="text-gray-700 hover:text-[#21a454] font-medium transition-colors"
                         >
                             {item.label}
                         </a>
@@ -70,7 +70,7 @@ export default function Header() {
                     <a
                         href="#contact"
                         onClick={(e) => scrollToSection(e, '#contact')}
-                        className="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:-translate-y-0.5"
+                        className="btn btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg hover:-translate-y-0.5"
                     >
                         Kostenlose Beratung
                     </a>
@@ -103,7 +103,7 @@ export default function Header() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
-                                className="text-gray-700 hover:text-green-600 font-medium py-2"
+                                className="text-gray-700 hover:text-[#21a454] font-medium py-2"
                             >
                                 {item.label}
                             </a>
