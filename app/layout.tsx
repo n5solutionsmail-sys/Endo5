@@ -11,6 +11,8 @@ const inter = Inter({
   display: "swap",
 });
 
+
+
 export const metadata: Metadata = {
   title: "Endo5 | Heizkosten senken – bis zu 15% sparen mit EndoTherm®",
   description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® – der smarten Lösung für Ihr Heizsystem. Jetzt kostenlos beraten lassen!",

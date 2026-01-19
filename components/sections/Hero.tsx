@@ -57,8 +57,9 @@ export default function Hero() {
         }
     };
 
-    // Shared text shadow for elevation
-    const shadow = '0 2px 8px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3)';
+    // Stronger text shadows for readability over nature imagery
+    const textShadow = '0 2px 8px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.4)';
+    const accentShadow = '0 2px 8px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3)';
 
     return (
         <section ref={containerRef} className="relative h-[400vh]">
@@ -66,12 +67,15 @@ export default function Hero() {
             <div className="sticky top-0 h-screen overflow-hidden bg-white">
                 {/* Background Animation */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Loading state */}
+                    {/* Loading state - polished */}
                     {!isLoaded && (
-                        <div className="absolute inset-0 bg-white flex items-center justify-center z-10">
-                            <div className="text-gray-400 flex flex-col items-center gap-3">
-                                <div className="w-10 h-10 border-2 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
-                                <span className="text-sm">{Math.round((loadedCount / FRAME_COUNT) * 100)}%</span>
+                        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white flex items-center justify-center z-10">
+                            <div className="flex flex-col items-center gap-4">
+                                <div className="w-12 h-12 rounded-full border-2 border-slate-200 border-t-blue-400 animate-spin" />
+                                <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                                    <span>Laden</span>
+                                    <span className="tabular-nums">{Math.round((loadedCount / FRAME_COUNT) * 100)}%</span>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -80,7 +84,7 @@ export default function Hero() {
                     <img
                         src={`/hero-frames/ezgif-frame-${String(currentFrame).padStart(3, '0')}.jpg`}
                         alt=""
-                        className="max-w-none h-full object-contain"
+                        className="max-w-none h-full object-contain transition-opacity duration-500"
                         style={{ opacity: isLoaded ? 1 : 0 }}
                     />
                 </div>
@@ -97,14 +101,14 @@ export default function Hero() {
                     style={{ width: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))' }}
                 />
 
-                {/* DARK OVERLAY - slight darkening for text readability */}
+                {/* GRADIENT VIGNETTE OVERLAY - soft, natural depth */}
                 <div
                     className="absolute top-0 bottom-0 pointer-events-none"
                     style={{
                         zIndex: 21,
                         left: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))',
                         right: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))',
-                        background: 'rgba(0,0,0,0.2)',
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.28) 100%)',
                     }}
                 />
 
@@ -112,69 +116,112 @@ export default function Hero() {
                 <div className="relative z-30 h-full flex items-center pt-20">
                     <div className="container-custom">
                         <div className="max-w-3xl mx-auto text-center">
-                            {/* Main Headline - FORCED WHITE */}
-                            <h1 style={{ color: '#ffffff', textShadow: shadow }} className="mb-6">
+                            {/* Main Headline - Clean & Minimal */}
+                            <h1
+                                className="mb-6"
+                                style={{ color: '#ffffff', textShadow }}
+                            >
                                 Heizkosten senken.
                                 <br />
-                                <span style={{
-                                    color: '#3b82f6',
-                                    textShadow: '0 0 10px rgba(255,255,255,1), 0 0 25px rgba(255,255,255,0.95), 0 0 50px rgba(255,255,255,0.8), 0 0 80px rgba(255,255,255,0.6), 0 0 120px rgba(255,255,255,0.4), 0 4px 8px rgba(0,0,0,0.5)'
-                                }}>Ohne Umbau.</span>
+                                <span className="relative inline-block">
+                                    Ohne Umbau.
+                                    {/* Subtle underline accent */}
+                                    <span
+                                        className="absolute -bottom-1 left-0 right-0 h-1 rounded-full"
+                                        style={{
+                                            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 20%, rgba(255,255,255,0.6) 80%, transparent 100%)',
+                                        }}
+                                    />
+                                </span>
                             </h1>
 
-                            {/* Subheadline - FORCED WHITE */}
+                            {/* Subheadline */}
                             <p
-                                className="text-xl lg:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed"
-                                style={{ color: '#ffffff', textShadow: shadow }}
+                                className="text-xl lg:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed font-light"
+                                style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
                             >
-                                Bis zu <strong style={{ color: '#ffffff' }}>15% weniger Heizkosten</strong> mit EndoTherm®
+                                Bis zu <strong className="font-semibold">15% weniger Heizkosten</strong> mit EndoTherm®
                                 <br />
                                 einfach dem Heizwasser zugeben, fertig.
                             </p>
 
-                            {/* CTA Buttons */}
+                            {/* CTA Buttons - Solid with larger hover lift */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                                 <button
                                     onClick={scrollToContact}
-                                    className="btn text-lg px-10 py-4 font-semibold"
-                                    style={{ backgroundColor: '#3b82f6', color: '#ffffff', boxShadow: '0 4px 14px rgba(0,0,0,0.25)' }}
+                                    className="btn text-lg px-10 py-4 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1"
+                                    style={{
+                                        backgroundColor: '#3b82f6',
+                                        color: '#ffffff',
+                                        boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
+                                    }}
                                 >
                                     Kostenlose Beratung
                                 </button>
                                 <button
                                     onClick={scrollToSolution}
-                                    className="btn text-lg px-10 py-4 hover:bg-white transition-colors"
-                                    style={{ backgroundColor: 'rgba(255,255,255,0.9)', color: '#1f2937', boxShadow: '0 4px 14px rgba(0,0,0,0.15)' }}
+                                    className="btn text-lg px-10 py-4 font-medium rounded-xl transition-all duration-300 hover:bg-white hover:-translate-y-1"
+                                    style={{
+                                        backgroundColor: 'rgba(255,255,255,0.9)',
+                                        color: '#1f2937',
+                                        boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
+                                    }}
                                 >
                                     Mehr erfahren
                                 </button>
                             </div>
 
-                            {/* Stats Row - ALL WHITE */}
+                            {/* Stats Row - Clean, no cards */}
                             <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
                                 <div className="text-center">
-                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow: shadow }}>15%</p>
-                                    <p className="mt-1" style={{ color: '#ffffff', textShadow: shadow }}>Ersparnis</p>
+                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow }}>15%</p>
+                                    <p className="mt-1" style={{ color: '#ffffff', textShadow }}>Ersparnis</p>
                                 </div>
                                 <div className="text-center">
-                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow: shadow }}>10+</p>
-                                    <p className="mt-1" style={{ color: '#ffffff', textShadow: shadow }}>Jahre Wirkung</p>
+                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow }}>10+</p>
+                                    <p className="mt-1" style={{ color: '#ffffff', textShadow }}>Jahre Wirkung</p>
                                 </div>
                                 <div className="text-center">
-                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow: shadow }}>0</p>
-                                    <p className="mt-1" style={{ color: '#ffffff', textShadow: shadow }}>Umbauarbeiten</p>
+                                    <p className="text-4xl lg:text-5xl font-bold" style={{ color: '#ffffff', textShadow }}>0</p>
+                                    <p className="mt-1" style={{ color: '#ffffff', textShadow }}>Umbauarbeiten</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-                    <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: 'rgba(255,255,255,0.6)', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
-                        <div className="w-1.5 h-3 rounded-full mt-2 animate-bounce" style={{ backgroundColor: 'rgba(255,255,255,0.6)' }}></div>
+                {/* Scroll Indicator - Elegant pulse */}
+                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30">
+                    <div
+                        className="w-6 h-10 rounded-full flex justify-center relative"
+                        style={{
+                            border: '1.5px solid rgba(255,255,255,0.5)',
+                            boxShadow: '0 0 20px rgba(255,255,255,0.08)',
+                        }}
+                    >
+                        <div
+                            className="w-1 h-2.5 rounded-full mt-2"
+                            style={{
+                                backgroundColor: 'rgba(255,255,255,0.7)',
+                                animation: 'gentlePulse 2s ease-in-out infinite',
+                            }}
+                        />
                     </div>
                 </div>
+
+                {/* Keyframe for gentle pulse animation */}
+                <style jsx>{`
+                    @keyframes gentlePulse {
+                        0%, 100% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                        50% {
+                            opacity: 0.5;
+                            transform: translateY(8px);
+                        }
+                    }
+                `}</style>
             </div>
         </section>
     );
