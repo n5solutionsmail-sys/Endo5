@@ -11,9 +11,9 @@ export default function Problem() {
                     <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-semibold mb-6 shadow-sm">
                         Das Problem
                     </span>
-                    <h2 className="mb-6 text-4xl md:text-5xl lg:text-6xl tracking-tight">
+                    <h2 className="mb-6 text-4xl md:text-5xl lg:text-6xl tracking-tight font-bold text-gray-900">
                         Heizkosten explodieren. <br />
-                        <span className="text-gray-500 font-medium">Ohne Aussicht auf Besserung.</span>
+                        <span className="block mt-2">Ohne Aussicht auf Besserung.</span>
                     </h2>
                     <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
                         Die Energiepreise kennen nur eine Richtung. Wer jetzt nicht handelt,
