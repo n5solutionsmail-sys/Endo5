@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const FRAME_COUNT = 138;
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export default function Hero() {
                     setIsLoaded(true);
                 }
             };
-            img.src = `/hero-frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+            img.src = `${BASE_PATH}/hero-frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
         }
     }, []);
 
@@ -82,7 +83,7 @@ export default function Hero() {
 
                     {/* Animation frame */}
                     <img
-                        src={`/hero-frames/ezgif-frame-${String(currentFrame).padStart(3, '0')}.jpg`}
+                        src={`${BASE_PATH}/hero-frames/ezgif-frame-${String(currentFrame).padStart(3, '0')}.jpg`}
                         alt=""
                         className="max-w-none h-full object-contain transition-opacity duration-500"
                         style={{ opacity: isLoaded ? 1 : 0 }}

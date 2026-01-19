@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { caseStudies } from '@/data/caseStudies';
 
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 export default function Testimonials() {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -46,7 +48,7 @@ export default function Testimonials() {
                             {/* Image Section with badge overlay */}
                             <div
                                 className="relative h-28 bg-cover bg-center bg-gray-100"
-                                style={{ backgroundImage: `url(${study.imagePath})` }}
+                                style={{ backgroundImage: `url(${BASE_PATH}${study.imagePath})` }}
                             >
                                 {/* Building Type Badge - positioned in image */}
                                 <span className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm ${index === activeIndex
@@ -117,7 +119,7 @@ export default function Testimonials() {
 
                             {/* Download Button */}
                             <a
-                                href={activeCase.pdfPath}
+                                href={`${BASE_PATH}${activeCase.pdfPath}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-colors"
