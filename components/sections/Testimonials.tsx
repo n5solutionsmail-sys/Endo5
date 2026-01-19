@@ -21,7 +21,7 @@ export default function Testimonials() {
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         Fallstudien
                     </span>
                     <h2 className="mb-6">
@@ -39,8 +39,8 @@ export default function Testimonials() {
                             key={study.id}
                             onClick={() => setActiveIndex(index)}
                             className={`text-left rounded-xl border-2 transition-all duration-300 overflow-hidden flex flex-col ${index === activeIndex
-                                ? 'border-[#21a454] shadow-lg'
-                                : 'border-gray-200 hover:border-[#21a454]/60 hover:shadow-md'
+                                ? 'border-[#3b82f6] shadow-lg'
+                                : 'border-gray-200 hover:border-[#3b82f6]/60 hover:shadow-md'
                                 }`}
                         >
                             {/* Image Section with badge overlay */}
@@ -50,7 +50,7 @@ export default function Testimonials() {
                             >
                                 {/* Building Type Badge - positioned in image */}
                                 <span className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm ${index === activeIndex
-                                    ? 'bg-[#21a454]/90 text-white'
+                                    ? 'bg-[#3b82f6]/90 text-white'
                                     : 'bg-white/90 text-gray-700'
                                     }`}>
                                     {study.buildingType}
@@ -59,7 +59,7 @@ export default function Testimonials() {
 
                             {/* Content Section */}
                             <div className={`p-3 flex-1 ${index === activeIndex
-                                ? 'bg-[#21a454]/10'
+                                ? 'bg-[#3b82f6]/10'
                                 : 'bg-white'
                                 }`}>
 
@@ -74,7 +74,7 @@ export default function Testimonials() {
                                 </p>
 
                                 {/* Savings Highlight */}
-                                <div className={`text-lg font-bold ${index === activeIndex ? 'text-[#21a454]' : 'text-gray-900'
+                                <div className={`text-lg font-bold ${index === activeIndex ? 'text-[#3b82f6]' : 'text-gray-900'
                                     }`}>
                                     {study.savings.percentage}
                                 </div>
@@ -84,15 +84,15 @@ export default function Testimonials() {
                 </div>
 
                 {/* Active Case Study Detail */}
-                <div className="bg-gradient-to-br from-gray-50 to-[#21a454]/5 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-gray-50 to-[#3b82f6]/5 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
                     {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#21a454] rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#3b82f6] rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"></div>
 
                     <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
                         {/* Left: Details */}
                         <div>
                             <div className="flex items-center gap-3 mb-4">
-                                <span className="bg-[#21a454]/10 text-[#1a8a45] px-3 py-1 rounded-full text-sm font-medium">
+                                <span className="bg-[#3b82f6]/10 text-[#2563eb] px-3 py-1 rounded-full text-sm font-medium">
                                     {activeCase.buildingType}
                                 </span>
                                 <span className="text-gray-500 text-sm">
@@ -133,13 +133,13 @@ export default function Testimonials() {
                         <div className="grid grid-cols-3 gap-3">
                             {/* Percentage Savings */}
                             <div className="bg-white rounded-xl p-4 shadow-md border border-gray-100">
-                                <div className="w-8 h-8 bg-[#21a454]/10 rounded-lg flex items-center justify-center mb-2">
-                                    <svg className="w-4 h-4 text-[#21a454]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-8 h-8 bg-[#3b82f6]/10 rounded-lg flex items-center justify-center mb-2">
+                                    <svg className="w-4 h-4 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                                     </svg>
                                 </div>
                                 <p className="text-xs text-gray-500">Einsparung</p>
-                                <p className="text-lg font-bold text-[#21a454]">{activeCase.savings.percentage}</p>
+                                <p className="text-lg font-bold text-[#3b82f6]">{activeCase.savings.percentage}</p>
                             </div>
 
                             {/* Financial Savings */}
@@ -171,7 +171,7 @@ export default function Testimonials() {
                 <div className="flex items-center justify-center gap-4 mt-8">
                     <button
                         onClick={prevCase}
-                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#21a454]/10 hover:border-[#21a454] transition-all"
+                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#3b82f6]/10 hover:border-[#3b82f6] transition-all"
                         aria-label="Previous case study"
                     >
                         <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@ export default function Testimonials() {
                                 key={index}
                                 onClick={() => setActiveIndex(index)}
                                 className={`w-3 h-3 rounded-full transition-all ${index === activeIndex
-                                    ? 'bg-[#21a454] w-8'
+                                    ? 'bg-[#3b82f6] w-8'
                                     : 'bg-gray-300 hover:bg-gray-400'
                                     }`}
                                 aria-label={`Go to case study ${index + 1}`}
@@ -196,7 +196,7 @@ export default function Testimonials() {
 
                     <button
                         onClick={nextCase}
-                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#21a454]/10 hover:border-[#21a454] transition-all"
+                        className="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#3b82f6]/10 hover:border-[#3b82f6] transition-all"
                         aria-label="Next case study"
                     >
                         <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

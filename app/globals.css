@@ -7,9 +7,9 @@
 
 :root {
   /* Primary Colors */
-  --primary-green: #21a454;
-  --primary-green-dark: #1a8a45;
-  --primary-green-light: #2dbf63;
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --primary-blue-light: #60a5fa;
   --primary-dark: #1a1a2e;
   --primary-light: #ffffff;
 
@@ -51,7 +51,7 @@
 }
 
 @theme inline {
-  --color-primary-green: var(--primary-green);
+  --color-primary-blue: var(--primary-blue);
   --color-primary-dark: var(--primary-dark);
   --color-accent-orange: var(--accent-orange);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -75,7 +75,7 @@ body {
 }
 
 ::selection {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: white;
 }
 
@@ -139,7 +139,7 @@ p {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -198,7 +198,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--primary-green);
+  outline: 2px solid var(--primary-blue);
   outline-offset: 2px;
 }
 
@@ -222,7 +222,7 @@ textarea:focus-visible {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
   color: white;
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
 }
@@ -244,12 +244,12 @@ textarea:focus-visible {
 
 .btn-outline {
   background: transparent;
-  color: var(--primary-green);
-  border: 2px solid var(--primary-green);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
 .btn-outline:hover {
-  background: var(--primary-green);
+  background: var(--primary-blue);
   color: white;
 }
 
@@ -295,8 +295,8 @@ textarea:focus-visible {
 
 .input:focus {
   outline: none;
-  border-color: var(--primary-green);
-  box-shadow: 0 0 0 3px rgba(33, 164, 84, 0.1);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .input::placeholder {
@@ -317,8 +317,8 @@ textarea:focus-visible {
 
 .bg-pattern {
   background-image:
-    radial-gradient(circle at 25% 25%, rgba(33, 164, 84, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
 }
 
 /* ========================================

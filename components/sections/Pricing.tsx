@@ -8,11 +8,11 @@ export default function Pricing() {
     return (
         <section id="pricing" className="section-padding bg-white overflow-hidden relative min-h-[800px] flex items-center">
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#21a454]/5 to-transparent pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#3b82f6]/5 to-transparent pointer-events-none" />
 
             <div className="container-custom relative z-10 w-full">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         KI-Analyse
                     </span>
                     <h2 className="mb-6">
@@ -144,20 +144,20 @@ function AIChatInterface() {
             >
                 {/* FRONT FACE: Chat Interface */}
                 <div
-                    className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden flex flex-col md:flex-row"
+                    className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden flex flex-col md:flex-row"
                     style={{ backfaceVisibility: 'hidden' }}
                 >
                     {/* Sidebar / Context */}
                     <div className="hidden md:flex w-1/3 bg-gray-50 p-8 flex-col justify-between border-r border-gray-100">
                         <div>
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-10 h-10 rounded-full bg-[#21a454] flex items-center justify-center shadow-lg shadow-[#21a454]/20">
+                                <div className="w-10 h-10 rounded-full bg-[#3b82f6] flex items-center justify-center shadow-lg shadow-[#3b82f6]/20">
                                     <Bot className="text-white w-6 h-6" />
                                 </div>
                                 <div>
                                     <div className="font-bold text-gray-900">Endo AI</div>
-                                    <div className="text-xs text-[#21a454] flex items-center gap-1">
-                                        <span className="w-2 h-2 rounded-full bg-[#21a454] animate-pulse" />
+                                    <div className="text-xs text-[#3b82f6] flex items-center gap-1">
+                                        <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
                                         Online
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@ function AIChatInterface() {
                             <div className="space-y-6">
                                 <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                                     <h4 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-2">
-                                        <Sparkles className="w-4 h-4 text-[#21a454]" />
+                                        <Sparkles className="w-4 h-4 text-[#3b82f6]" />
                                         Echtzeit-Analyse
                                     </h4>
                                     <p className="text-gray-600 text-sm leading-relaxed">
@@ -185,12 +185,12 @@ function AIChatInterface() {
                     <div className="flex-1 flex flex-col relative bg-white">
                         {/* Mobile Header */}
                         <div className="md:hidden p-4 border-b border-gray-100 flex items-center gap-3 bg-gray-50">
-                            <div className="w-8 h-8 rounded-full bg-[#21a454] flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-[#3b82f6] flex items-center justify-center">
                                 <Bot className="text-white w-5 h-5" />
                             </div>
                             <div>
                                 <div className="font-bold text-gray-900 text-sm">Endo AI</div>
-                                <div className="text-xs text-[#21a454]">Online</div>
+                                <div className="text-xs text-[#3b82f6]">Online</div>
                             </div>
                         </div>
 
@@ -204,8 +204,8 @@ function AIChatInterface() {
                                         className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
                                         <div className={`flex items-end gap-2 max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'ai' ? 'bg-[#21a454]/10' : 'bg-gray-100'}`}>
-                                                {msg.role === 'ai' ? <Bot className="w-5 h-5 text-[#1a8a45]" /> : <User className="w-5 h-5 text-gray-700" />}
+                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'ai' ? 'bg-[#3b82f6]/10' : 'bg-gray-100'}`}>
+                                                {msg.role === 'ai' ? <Bot className="w-5 h-5 text-[#2563eb]" /> : <User className="w-5 h-5 text-gray-700" />}
                                             </div>
                                             <div
                                                 className={`p-3 md:p-4 rounded-2xl text-[15px] leading-relaxed shadow-sm ${msg.role === 'user'
@@ -227,8 +227,8 @@ function AIChatInterface() {
                                     className="flex justify-start"
                                 >
                                     <div className="flex items-end gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-[#21a454]/10 flex items-center justify-center flex-shrink-0">
-                                            <Bot className="w-5 h-5 text-[#1a8a45]" />
+                                        <div className="w-8 h-8 rounded-full bg-[#3b82f6]/10 flex items-center justify-center flex-shrink-0">
+                                            <Bot className="w-5 h-5 text-[#2563eb]" />
                                         </div>
                                         <div className="bg-white border border-gray-100 p-4 rounded-2xl rounded-bl-none shadow-sm flex gap-1">
                                             <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -251,12 +251,12 @@ function AIChatInterface() {
                                     onKeyDown={handleKeyDown}
                                     placeholder="Ihre Antwort..."
                                     disabled={isTyping}
-                                    className="w-full bg-gray-50 border border-gray-200 rounded-full pl-6 pr-14 py-4 focus:outline-none focus:ring-2 focus:ring-[#21a454] focus:border-transparent transition-all"
+                                    className="w-full bg-gray-50 border border-gray-200 rounded-full pl-6 pr-14 py-4 focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent transition-all"
                                 />
                                 <button
                                     onClick={handleSend}
                                     disabled={!inputValue.trim() || isTyping}
-                                    className="absolute right-2 p-2 bg-[#21a454] text-white rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#1a8a45] transition-colors shadow-md transform active:scale-95 duration-100"
+                                    className="absolute right-2 p-2 bg-[#3b82f6] text-white rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#2563eb] transition-colors shadow-md transform active:scale-95 duration-100"
                                 >
                                     <Send className="w-5 h-5" />
                                 </button>
@@ -267,13 +267,13 @@ function AIChatInterface() {
 
                 {/* BACK FACE: Result Card */}
                 <div
-                    className="absolute inset-0 h-full w-full backface-hidden bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center justify-center text-center p-8 md:p-16 border border-green-200"
+                    className="absolute inset-0 h-full w-full backface-hidden bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center justify-center text-center p-8 md:p-16 border border-blue-200"
                     style={{
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-r from-[#21a454] to-emerald-600" />
+                    <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-r from-[#3b82f6] to-blue-600" />
 
                     <ResultContent
                         isFlipped={isFlipped}
@@ -335,7 +335,7 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
             <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto px-4">
                 <div className="w-full h-1.5 bg-gray-100 rounded-full mb-6 overflow-hidden">
                     <motion.div
-                        className="h-full bg-gradient-to-r from-[#21a454] to-[#1a8a45]"
+                        className="h-full bg-gradient-to-r from-[#3b82f6] to-[#2563eb]"
                         initial={{ width: 0 }}
                         animate={{ width: `${progress}%` }}
                         transition={{ ease: "linear", duration: 0.1 }}
@@ -359,9 +359,9 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: 'spring', delay: 0.1 }}
-                className="w-20 h-20 bg-[#21a454]/10 rounded-full flex items-center justify-center mb-6"
+                className="w-20 h-20 bg-[#3b82f6]/10 rounded-full flex items-center justify-center mb-6"
             >
-                <CheckCircle2 className="w-10 h-10 text-[#21a454]" />
+                <CheckCircle2 className="w-10 h-10 text-[#3b82f6]" />
             </motion.div>
 
             <motion.h3
@@ -379,7 +379,7 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                 transition={{ delay: 0.3 }}
                 className="text-xl text-gray-600 mb-8"
             >
-                Wir haben für Ihre Angaben ({answers.area}m², {answers.type}) ein <span className="text-[#1a8a45] font-bold">signifikantes Einsparpotenzial</span> ermittelt.
+                Wir haben für Ihre Angaben ({answers.area}m², {answers.type}) ein <span className="text-[#2563eb] font-bold">signifikantes Einsparpotenzial</span> ermittelt.
             </motion.p>
 
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -387,13 +387,13 @@ function ResultContent({ isFlipped, answers, onReset }: { isFlipped: boolean; an
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="bg-[#21a454]/10 rounded-2xl p-4 border border-[#21a454]/20 flex flex-col items-center justify-center min-h-[120px]"
+                    className="bg-[#3b82f6]/10 rounded-2xl p-4 border border-[#3b82f6]/20 flex flex-col items-center justify-center min-h-[120px]"
                 >
-                    <div className="text-sm text-[#1a8a45] font-medium mb-1">Mögliche Ersparnis</div>
-                    <div className="text-3xl font-bold text-[#14532d]">
+                    <div className="text-sm text-[#2563eb] font-medium mb-1">Mögliche Ersparnis</div>
+                    <div className="text-3xl font-bold text-[#1e40af]">
                         <CountUp end={15} suffix="%" duration={2} />
                     </div>
-                    <div className="text-xs text-[#21a454] mt-1">der Heizkosten</div>
+                    <div className="text-xs text-[#3b82f6] mt-1">der Heizkosten</div>
                 </motion.div>
 
                 <motion.div

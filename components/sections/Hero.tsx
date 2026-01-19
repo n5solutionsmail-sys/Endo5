@@ -70,7 +70,7 @@ export default function Hero() {
                     {!isLoaded && (
                         <div className="absolute inset-0 bg-white flex items-center justify-center z-10">
                             <div className="text-gray-400 flex flex-col items-center gap-3">
-                                <div className="w-10 h-10 border-2 border-gray-200 border-t-green-500 rounded-full animate-spin"></div>
+                                <div className="w-10 h-10 border-2 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
                                 <span className="text-sm">{Math.round((loadedCount / FRAME_COUNT) * 100)}%</span>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ export default function Hero() {
                             <h1 style={{ color: '#ffffff', textShadow: shadow }} className="mb-6">
                                 Heizkosten senken.
                                 <br />
-                                <span style={{ color: '#FACC15', textShadow: shadow }}>Ohne Umbau.</span>
+                                <span style={{ color: '#3b82f6', textShadow: shadow }}>Ohne Umbau.</span>
                             </h1>
 
                             {/* Subheadline - FORCED WHITE */}
@@ -134,7 +134,7 @@ export default function Hero() {
                                 <button
                                     onClick={scrollToContact}
                                     className="btn text-lg px-10 py-4 font-semibold"
-                                    style={{ backgroundColor: '#FACC15', color: '#1a1a2e', boxShadow: '0 4px 14px rgba(0,0,0,0.25)' }}
+                                    style={{ backgroundColor: '#3b82f6', color: '#ffffff', boxShadow: '0 4px 14px rgba(0,0,0,0.25)' }}
                                 >
                                     Kostenlose Beratung
                                 </button>

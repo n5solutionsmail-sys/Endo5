@@ -152,11 +152,11 @@ export default function Benefits() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block bg-green-50 text-green-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+                        <span className="inline-block bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
                             Zahlen & Fakten
                         </span>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                            Warum sich EndoTherm® <span className="text-green-600">für Sie lohnt</span>
+                            Warum sich EndoTherm® <span className="text-blue-600">für Sie lohnt</span>
                         </h2>
                         <p className="text-lg text-gray-600">
                             Harte Fakten statt leerer Versprechen.
@@ -175,7 +175,7 @@ export default function Benefits() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
                             {/* Icon Bubble */}
-                            <div className="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4">
                                 {benefit.icon}
                             </div>
 

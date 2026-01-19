@@ -25,7 +25,7 @@ export default function Solution() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                             Die Lösung
                         </span>
                         <h2 className="mb-6">
@@ -70,7 +70,7 @@ export default function Solution() {
                             <div className="hidden lg:block">
                                 <AdlibTag
                                     text="100% organisch"
-                                    className="absolute -top-5 -right-4 rotate-[3deg] z-20 bg-[#21a454]/10 border-[#21a454]/20 text-[#1a8a45]"
+                                    className="absolute -top-5 -right-4 rotate-[3deg] z-20 bg-[#3b82f6]/10 border-[#3b82f6]/20 text-[#2563eb]"
                                     delay={0.5}
                                 />
                             </div>
@@ -120,10 +120,10 @@ export default function Solution() {
 
                     {/* Mobile Adlibs (Visible only on small screens below grid) */}
                     <div className="lg:hidden flex flex-wrap gap-3 justify-center mt-12">
-                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">Keine Betriebsunterbrechung</span>
-                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">100% organisch</span>
-                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">10 Jahre Garantie</span>
-                        <span className="bg-[#21a454]/10 text-[#1a8a45] px-4 py-2 rounded-full text-sm font-semibold">TÜV-geprüft</span>
+                        <span className="bg-[#3b82f6]/10 text-[#2563eb] px-4 py-2 rounded-full text-sm font-semibold">Keine Betriebsunterbrechung</span>
+                        <span className="bg-[#3b82f6]/10 text-[#2563eb] px-4 py-2 rounded-full text-sm font-semibold">100% organisch</span>
+                        <span className="bg-[#3b82f6]/10 text-[#2563eb] px-4 py-2 rounded-full text-sm font-semibold">10 Jahre Garantie</span>
+                        <span className="bg-[#3b82f6]/10 text-[#2563eb] px-4 py-2 rounded-full text-sm font-semibold">TÜV-geprüft</span>
                     </div>
 
                 </div>
@@ -150,14 +150,14 @@ function FeatureCard({ title, description, icon, delay, isHighlight = false }: {
     return (
         <motion.div
             className={`p-8 rounded-3xl border transition-all h-full ${isHighlight
-                ? 'bg-white border-[#21a454]/20 shadow-xl shadow-[#21a454]/5 ring-1 ring-[#21a454]/10'
+                ? 'bg-white border-[#3b82f6]/20 shadow-xl shadow-[#3b82f6]/5 ring-1 ring-[#3b82f6]/10'
                 : 'bg-gray-50 border-transparent hover:bg-white hover:border-gray-100 hover:shadow-lg'}`}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
         >
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${isHighlight ? 'bg-[#21a454] text-white shadow-lg shadow-[#21a454]/30' : 'bg-white text-[#21a454] shadow-sm'}`}>
+            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${isHighlight ? 'bg-[#3b82f6] text-white shadow-lg shadow-[#3b82f6]/30' : 'bg-white text-[#3b82f6] shadow-sm'}`}>
                 {icon}
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
@@ -169,7 +169,7 @@ function FeatureCard({ title, description, icon, delay, isHighlight = false }: {
 function AdlibTag({ text, className, delay }: { text: string, className: string, delay: number }) {
     return (
         <motion.div
-            className={`bg-white text-gray-800 px-6 py-3 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-green-100 text-sm whitespace-nowrap cursor-default transition-transform duration-200 hover:scale-105 ${className}`}
+            className={`bg-white text-gray-800 px-6 py-3 rounded-2xl font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-blue-100 text-sm whitespace-nowrap cursor-default transition-transform duration-200 hover:scale-105 ${className}`}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}

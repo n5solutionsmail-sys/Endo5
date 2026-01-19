@@ -30,12 +30,12 @@ export default function Footer() {
                         <h4 className="font-semibold text-gray-900 mb-5">Navigation</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="#solution" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
+                                <Link href="#solution" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
                                     Lösung
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#benefits" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
+                                <Link href="#benefits" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
                                     Vorteile
                                 </Link>
                             </li>

@@ -57,7 +57,7 @@ export default function Header() {
                             key={item.href}
                             href={item.href}
                             onClick={(e) => scrollToSection(e, item.href)}
-                            className="text-gray-700 hover:text-[#21a454] font-medium transition-colors"
+                            className="text-gray-700 hover:text-[#3b82f6] font-medium transition-colors"
                         >
                             {item.label}
                         </a>
@@ -102,7 +102,7 @@ export default function Header() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
-                                className="text-gray-700 hover:text-[#21a454] font-medium py-2"
+                                className="text-gray-700 hover:text-[#3b82f6] font-medium py-2"
                             >
                                 {item.label}
                             </a>

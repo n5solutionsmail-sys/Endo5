@@ -18,15 +18,15 @@ export default function HowItWorks() {
 
     // ... (lines 19-90)
 
-                    {/* Central Line - Active Animation with fade */}
-                    <motion.div
-                        className="absolute left-[20px] lg:left-1/2 top-0 w-1 lg:-translate-x-1/2 rounded-full origin-top"
-                        style={{ 
-                            height: "100%", 
-                            scaleY,
-                            background: 'linear-gradient(to bottom, #21a454 0%, #21a454 95%, transparent 100%)'
-                        }}
-                    />
+    {/* Central Line - Active Animation with fade */ }
+    <motion.div
+        className="absolute left-[20px] lg:left-1/2 top-0 w-1 lg:-translate-x-1/2 rounded-full origin-top"
+        style={{
+            height: "100%",
+            scaleY,
+            background: 'linear-gradient(to bottom, #3b82f6 0%, #3b82f6 95%, transparent 100%)'
+        }}
+    />
 
     const steps = [
         {
@@ -76,7 +76,7 @@ export default function HowItWorks() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                             Der Prozess
                         </span>
                         <h2 className="mb-6">
@@ -92,7 +92,7 @@ export default function HowItWorks() {
                 {/* Roadmap Container */}
                 <div className="relative max-w-4xl mx-auto">
                     {/* Central Line - Background with fade out at bottom */}
-                    <div 
+                    <div
                         className="absolute left-[20px] lg:left-1/2 top-0 bottom-0 w-1 lg:-translate-x-1/2 rounded-full"
                         style={{
                             background: 'linear-gradient(to bottom, #e5e7eb 0%, #e5e7eb 95%, transparent 100%)'
@@ -102,10 +102,10 @@ export default function HowItWorks() {
                     {/* Central Line - Active Animation with fade */}
                     <motion.div
                         className="absolute left-[20px] lg:left-1/2 top-0 w-1 lg:-translate-x-1/2 rounded-full origin-top"
-                        style={{ 
-                            height: "100%", 
+                        style={{
+                            height: "100%",
                             scaleY,
-                            background: 'linear-gradient(to bottom, #21a454 0%, #21a454 95%, transparent 100%)'
+                            background: 'linear-gradient(to bottom, #3b82f6 0%, #3b82f6 95%, transparent 100%)'
                         }}
                     />
 
@@ -126,7 +126,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Clean CTA Section - Enhanced with more visual appeal */}
-                <motion.div 
+                <motion.div
                     className="max-w-2xl mx-auto text-center mt-16"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export default function HowItWorks() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     {/* Success Badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/80 text-[#1a8a45] px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-sm border border-[#21a454]/20">
+                    <div className="inline-flex items-center gap-2 bg-white/80 text-[#2563eb] px-5 py-2.5 rounded-full text-sm font-medium mb-8 shadow-sm border border-[#3b82f6]/20">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -145,7 +145,7 @@ export default function HowItWorks() {
                         Bereit für den ersten Schritt?
                     </h3>
                     <p className="text-lg text-gray-600 mb-10">
-                        Die Erstberatung ist <span className="text-[#21a454] font-semibold">100% kostenlos</span>.
+                        Die Erstberatung ist <span className="text-[#3b82f6] font-semibold">100% kostenlos</span>.
                     </p>
 
                     <button
@@ -197,11 +197,11 @@ function HowItWorksItem({
             >
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                     <div className={`flex items-center gap-4 mb-4 ${alignment === 'left' ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-                        <div className="w-12 h-12 bg-[#21a454]/10 rounded-xl flex items-center justify-center text-[#21a454] group-hover:bg-[#21a454] group-hover:text-white transition-colors duration-300 shrink-0">
+                        <div className="w-12 h-12 bg-[#3b82f6]/10 rounded-xl flex items-center justify-center text-[#3b82f6] group-hover:bg-[#3b82f6] group-hover:text-white transition-colors duration-300 shrink-0">
                             {icon}
                         </div>
                         <div>
-                            <div className={`text-sm font-bold text-[#21a454] mb-1 ${alignment === 'left' ? 'lg:text-right' : ''}`}>SCHRITT {number}</div>
+                            <div className={`text-sm font-bold text-[#3b82f6] mb-1 ${alignment === 'left' ? 'lg:text-right' : ''}`}>SCHRITT {number}</div>
                             <h3 className="text-xl font-bold text-gray-900">{title}</h3>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ function HowItWorksItem({
                     </p>
 
                     <div className={`inline-flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full ${alignment === 'left' ? 'lg:flex-row-reverse' : ''}`}>
-                        <svg className="w-4 h-4 text-[#21a454]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span className="text-sm font-medium text-gray-500">{duration}</span>
@@ -222,13 +222,13 @@ function HowItWorksItem({
             {/* Center Dot */}
             <div className="absolute left-[20px] lg:left-1/2 -translate-x-1/2 flex items-center justify-center">
                 <motion.div
-                    className="w-12 h-12 bg-white rounded-full border-4 border-green-100 flex items-center justify-center z-10 shadow-sm"
+                    className="w-12 h-12 bg-white rounded-full border-4 border-blue-100 flex items-center justify-center z-10 shadow-sm"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
                 >
-                    <div className="w-4 h-4 bg-[#21a454] rounded-full" />
+                    <div className="w-4 h-4 bg-[#3b82f6] rounded-full" />
                 </motion.div>
             </div>
 

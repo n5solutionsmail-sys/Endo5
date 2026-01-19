@@ -11,8 +11,8 @@ export default function Contact() {
                 "theme": "light",
                 "cssVarsPerTheme": {
                     "light": {
-                        "cal-brand": "#21a454",
-                        "cal-brand-emphasis": "#1a8a45",
+                        "cal-brand": "#3b82f6",
+                        "cal-brand-emphasis": "#2563eb",
                         "cal-brand-text": "#ffffff",
                         "cal-text": "#1f2937",
                         "cal-text-emphasis": "#111827",
@@ -22,8 +22,8 @@ export default function Contact() {
                         "cal-bg-emphasis": "#f9fafb",
                     },
                     "dark": {
-                        "cal-brand": "#21a454",
-                        "cal-brand-emphasis": "#16a34a",
+                        "cal-brand": "#3b82f6",
+                        "cal-brand-emphasis": "#2563eb",
                         "cal-brand-text": "#ffffff",
                     }
                 },
@@ -38,7 +38,7 @@ export default function Contact() {
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         Termin buchen
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

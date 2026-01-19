@@ -49,7 +49,7 @@ export default function FAQ() {
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block bg-[#21a454]/10 text-[#1a8a45] px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                    <span className="inline-block bg-[#3b82f6]/10 text-[#2563eb] px-4 py-1 rounded-full text-sm font-semibold mb-4">
                         FAQ
                     </span>
                     <h2 className="mb-6">
@@ -72,10 +72,10 @@ export default function FAQ() {
                                 onClick={() => toggleItem(index)}
                                 className="w-full py-6 flex items-center justify-between text-left group"
                             >
-                                <span className="text-lg font-semibold text-gray-900 group-hover:text-[#21a454] transition-colors pr-4">
+                                <span className="text-lg font-semibold text-gray-900 group-hover:text-[#3b82f6] transition-colors pr-4">
                                     {item.question}
                                 </span>
-                                <span className={`flex-shrink-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index ? 'bg-[#21a454] rotate-180' : 'group-hover:bg-[#21a454]/10'
+                                <span className={`flex-shrink-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index ? 'bg-[#3b82f6] rotate-180' : 'group-hover:bg-[#3b82f6]/10'
                                     }`}>
                                     <svg
                                         className={`w-5 h-5 transition-colors ${openIndex === index ? 'text-white' : 'text-gray-600'

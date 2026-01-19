@@ -14,26 +14,26 @@ export default function Newsletter() {
     };
 
     return (
-        <section className="py-16 bg-gradient-to-r from-green-600 to-green-700">
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
             <div className="container-custom">
                 <div className="max-w-4xl mx-auto text-center">
                     <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
                         Bleiben Sie informiert
                     </h3>
-                    <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+                    <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
                         Erhalten Sie exklusive Tipps zum Energiesparen und aktuelle Informationen
                         über Fördermöglichkeiten direkt in Ihr Postfach.
                     </p>
 
                     {isSubmitted ? (
                         <div className="bg-white/20 backdrop-blur rounded-2xl p-6 max-w-md mx-auto">
-                            <div className="w-12 h-12 bg-white text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
                             </div>
                             <p className="text-white font-semibold">Vielen Dank für Ihre Anmeldung!</p>
-                            <p className="text-green-100 text-sm mt-2">
+                            <p className="text-blue-100 text-sm mt-2">
                                 Sie erhalten in Kürze eine Bestätigungs-E-Mail.
                             </p>
                         </div>
@@ -49,14 +49,14 @@ export default function Newsletter() {
                             />
                             <button
                                 type="submit"
-                                className="bg-white text-green-700 px-8 py-4 rounded-xl font-semibold hover:bg-green-50 transition-colors whitespace-nowrap"
+                                className="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors whitespace-nowrap"
                             >
                                 Anmelden
                             </button>
                         </form>
                     )}
 
-                    <p className="text-green-200 text-sm mt-6">
+                    <p className="text-blue-200 text-sm mt-6">
                         Kein Spam. Jederzeit abmelden. Ihre Daten sind sicher.
                     </p>
                 </div>
