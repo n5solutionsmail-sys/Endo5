@@ -116,7 +116,10 @@ export default function Hero() {
                             <h1 style={{ color: '#ffffff', textShadow: shadow }} className="mb-6">
                                 Heizkosten senken.
                                 <br />
-                                <span style={{ color: '#3b82f6', textShadow: shadow }}>Ohne Umbau.</span>
+                                <span style={{
+                                    color: '#3b82f6',
+                                    textShadow: '0 0 10px rgba(255,255,255,1), 0 0 25px rgba(255,255,255,0.95), 0 0 50px rgba(255,255,255,0.8), 0 0 80px rgba(255,255,255,0.6), 0 0 120px rgba(255,255,255,0.4), 0 4px 8px rgba(0,0,0,0.5)'
+                                }}>Ohne Umbau.</span>
                             </h1>
 
                             {/* Subheadline - FORCED WHITE */}

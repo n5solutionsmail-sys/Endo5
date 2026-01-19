@@ -12,7 +12,7 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-5">
                             <Image
-                                src="/5a93a8c5-b777-4800-b402-22703273c049.png"
+                                src="/n5-logo.png"
                                 alt="N5 Logo"
                                 width={160}
                                 height={64}

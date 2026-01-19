@@ -41,7 +41,7 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center pl-4">
                     <Image
-                        src="/5a93a8c5-b777-4800-b402-22703273c049.png"
+                        src="/n5-logo.png"
                         alt="N5 Logo"
                         width={220}
                         height={88}
