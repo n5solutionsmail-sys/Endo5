@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -12,7 +14,7 @@ export default function Footer() {
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-5">
                             <Image
-                                src="/n5-logo.png"
+                                src={`${BASE_PATH}/n5-logo.png`}
                                 alt="N5 Logo"
                                 width={160}
                                 height={64}

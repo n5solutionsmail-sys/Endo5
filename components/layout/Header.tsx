@@ -12,6 +12,8 @@ const navItems = [
     { label: 'FAQ', href: '#faq' },
 ];
 
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +43,7 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center pl-4">
                     <Image
-                        src="/n5-logo.png"
+                        src={`${BASE_PATH}/n5-logo.png`}
                         alt="N5 Logo"
                         width={220}
                         height={88}
