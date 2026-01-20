@@ -17,7 +17,7 @@ export default function Hero() {
         }
     };
 
-    const textShadow = '0 2px 12px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5)';
+    const textShadow = '0 1px 2px rgba(0,0,0,0.3)';
 
     return (
         <section className="relative min-h-screen">
@@ -60,14 +60,14 @@ export default function Hero() {
                         >
                             EndoTherm steigert die Effizienz Ihrer Heizung und senkt
                             <br />
-                            Ihre Energiekosten um bis zu 15% – einfach und preiswert.
+                            Ihre Energiekosten um bis zu 15%, einfach und preiswert.
                         </p>
 
                         {/* Trust Badges */}
                         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
                             <span
                                 className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-                                style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
+                                style={{ background: 'rgba(0,0,0,0.3)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)' }}
                             >
                                 <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -76,7 +76,7 @@ export default function Hero() {
                             </span>
                             <span
                                 className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-                                style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
+                                style={{ background: 'rgba(0,0,0,0.3)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)' }}
                             >
                                 <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -85,7 +85,7 @@ export default function Hero() {
                             </span>
                             <span
                                 className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-                                style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}
+                                style={{ background: 'rgba(0,0,0,0.3)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)' }}
                             >
                                 <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
