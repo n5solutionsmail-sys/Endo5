@@ -3,8 +3,6 @@ import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
 import Benefits from "@/components/sections/Benefits";
 import Testimonials from "@/components/sections/Testimonials";
-import Pricing from "@/components/sections/Pricing";
-import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -22,12 +20,6 @@ export default function Home() {
       </div>
       <div className="section-divider">
         <Testimonials />
-      </div>
-      <div className="section-divider">
-        <Pricing />
-      </div>
-      <div className="section-divider">
-        <FAQ />
       </div>
       <Contact />
     </>
