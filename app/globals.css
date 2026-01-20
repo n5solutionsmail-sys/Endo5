@@ -330,71 +330,16 @@ textarea:focus-visible {
   min-height: 100vh;
 }
 
-.grid-line {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: #e5e7eb;
-  z-index: 9999;
-  pointer-events: none;
-}
 
-.grid-line-left {
-  left: calc((100vw - 1280px) / 2 + 1.5rem);
-}
-
-.grid-line-right {
-  right: calc((100vw - 1280px) / 2 + 1.5rem);
-}
-
-@media (max-width: 1280px) {
-  .grid-line-left {
-    left: 1.5rem;
-  }
-
-  .grid-line-right {
-    right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .grid-line-left {
-    left: 2rem;
-  }
-
-  .grid-line-right {
-    right: 2rem;
-  }
-}
-
-/* Section divider - horizontal line between sections */
-.section-divider {
-  position: relative;
-}
 
 .section-divider::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: calc((100vw - 1280px) / 2 + 1.5rem);
-  right: calc((100vw - 1280px) / 2 + 1.5rem);
+  left: 0;
+  right: 0;
   height: 1px;
   background: #e5e7eb;
-}
-
-@media (max-width: 1280px) {
-  .section-divider::after {
-    left: 1.5rem;
-    right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .section-divider::after {
-    left: 2rem;
-    right: 2rem;
-  }
 }
 
 /* Header bottom border aligned with grid */
@@ -402,22 +347,8 @@ textarea:focus-visible {
   content: '';
   position: absolute;
   bottom: 0;
-  left: calc((100vw - 1280px) / 2 + 1.5rem);
-  right: calc((100vw - 1280px) / 2 + 1.5rem);
+  left: 0;
+  right: 0;
   height: 1px;
   background: #e5e7eb;
-}
-
-@media (max-width: 1280px) {
-  .header-border::after {
-    left: 1.5rem;
-    right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) {
-  .header-border::after {
-    left: 2rem;
-    right: 2rem;
-  }
 }

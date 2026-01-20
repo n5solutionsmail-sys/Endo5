@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GridContainer from "@/components/layout/GridContainer";
-import GridOverlay from "@/components/layout/GridOverlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,7 +46,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </GridContainer>
-        <GridOverlay />
       </body>
     </html>
   );

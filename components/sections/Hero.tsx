@@ -36,21 +36,11 @@ export default function Hero() {
                 />
             </div>
 
-            {/* WHITE OVERLAY - LEFT */}
-            <div
-                className="absolute top-0 bottom-0 left-0 bg-white z-20"
-                style={{ width: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))' }}
-            />
 
-            {/* WHITE OVERLAY - RIGHT */}
-            <div
-                className="absolute top-0 bottom-0 right-0 bg-white z-20"
-                style={{ width: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))' }}
-            />
 
             {/* Content */}
             <div className="relative z-10 min-h-screen flex items-center pt-20">
-                <div className="container-custom w-full">
+                <div className="w-full px-4 sm:px-6 lg:px-8">
                     <div className="max-w-2xl mx-auto text-center">
 
                         {/* Headline - 2 lines max */}
@@ -112,7 +102,6 @@ export default function Hero() {
                                 style={{
                                     backgroundColor: '#3b82f6',
                                     color: '#ffffff',
-                                    boxShadow: '0 4px 20px rgba(59,130,246,0.4)',
                                 }}
                             >
                                 Kostenlose Beratung

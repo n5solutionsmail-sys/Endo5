@@ -39,7 +39,7 @@ export default function Header() {
         <header
             className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-border bg-white/80 backdrop-blur-md py-4"
         >
-            <div className="container-custom flex items-center justify-between">
+            <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center pl-4">
                     <Image
@@ -98,7 +98,7 @@ export default function Header() {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden bg-white border-t shadow-lg">
-                    <nav className="container-custom py-4 flex flex-col gap-4">
+                    <nav className="w-full px-4 py-4 flex flex-col gap-4">
                         {navItems.map((item) => (
                             <a
                                 key={item.href}

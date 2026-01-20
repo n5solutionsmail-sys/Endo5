@@ -12,9 +12,7 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      <div className="section-divider">
-        <Hero />
-      </div>
+      <Hero />
       <div className="section-divider">
         <Problem />
       </div>
