@@ -36,7 +36,7 @@ export default function Problem() {
     }, []);
 
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="pt-24 pb-8 bg-white relative overflow-hidden">
             <div className="container-custom">
                 
                 {/* Minimal Header */}
@@ -97,7 +97,7 @@ export default function Problem() {
 
                 {/* Bridge to Solution */}
                 <motion.div
-                    className="mt-20 text-center"
+                    className="mt-12 text-center"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

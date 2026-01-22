@@ -145,7 +145,7 @@ export default function Solution() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <p className="text-gray-500 text-sm mb-4">
-                        <span className="font-medium text-gray-700">Ergebnis:</span> Bis zu 15% weniger Heizkosten – ohne Umbau.
+                        <span className="font-medium text-gray-700">Ergebnis:</span> Bis zu 15% weniger Heizkosten – ohne Umbau, große Investition oder Betriebsunterbrechung.
                     </p>
                     <button onClick={scrollToContact} className="btn btn-primary text-sm px-6 py-2.5">
                         Einsparpotential berechnen
