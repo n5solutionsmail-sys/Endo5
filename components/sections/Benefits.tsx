@@ -29,7 +29,7 @@ const stats = [
 
 export default function Benefits() {
     return (
-        <section className="bg-slate-50 py-10 relative overflow-hidden">
+        <section id="benefits" className="bg-slate-50 py-10 relative overflow-hidden">
             {/* Animated Background Elements */}
             <motion.div
                 className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-blue-200/30 rounded-full blur-3xl"

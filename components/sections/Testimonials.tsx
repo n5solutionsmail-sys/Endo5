@@ -19,7 +19,7 @@ export default function Testimonials() {
     const activeCase = caseStudies[activeIndex];
 
     return (
-        <section className="section-padding bg-white">
+        <section id="testimonials" className="section-padding bg-white">
             <div className="container-custom">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">

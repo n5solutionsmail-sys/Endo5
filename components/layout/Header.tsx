@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const navItems = [
-    { label: 'Lösung', href: '#solution' },
-    { label: 'Vorteile', href: '#benefits' },
-    { label: 'So funktioniert\'s', href: '#how-it-works' },
+    { label: 'Lösung', href: '#benefits' },
+    { label: 'So funktioniert\'s', href: '#solution' },
+    { label: 'Fallstudien', href: '#testimonials' },
 ];
 
 const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
@@ -38,15 +38,15 @@ export default function Header() {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled
-                ? 'py-3 bg-white/70 backdrop-blur-2xl shadow-lg shadow-black/5'
+                ? 'py-2 bg-white/70 backdrop-blur-2xl shadow-lg shadow-black/5'
                 : 'py-5 bg-transparent'
                 }`}
         >
-            <div className="w-full px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+            <div className="w-full px-6 sm:px-8 lg:px-12 flex items-center">
                 {/* Logo */}
-                <Link href="/" className="flex items-center group">
+                <Link href="/" className="flex items-center group mr-8">
                     <div
-                        className="relative transition-all duration-500 h-20"
+                        className={`relative transition-all duration-500 ${isScrolled ? 'h-14' : 'h-20'}`}
                     >
                         <Image
                             src={`${BASE_PATH}/n5-logo.png`}
@@ -61,7 +61,7 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-1">
+                <nav className="hidden lg:flex items-center gap-1 mr-auto">
                     {navItems.map((item) => (
                         <a
                             key={item.href}
@@ -111,7 +111,7 @@ export default function Header() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className={`lg:hidden p-2.5 rounded-full transition-all duration-300 ${isScrolled
+                    className={`ml-auto lg:hidden p-2.5 rounded-full transition-all duration-300 ${isScrolled
                         ? 'text-gray-700 hover:bg-gray-100'
                         : 'text-white hover:bg-white/10'
                         }`}
