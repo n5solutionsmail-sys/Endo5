@@ -13,10 +13,10 @@ export default function Home() {
         <Problem />
       </div>
       <div className="section-divider">
-        <Solution />
+        <Benefits />
       </div>
       <div className="section-divider">
-        <Benefits />
+        <Solution />
       </div>
       <div className="section-divider">
         <Testimonials />

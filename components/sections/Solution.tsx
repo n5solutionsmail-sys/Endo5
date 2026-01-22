@@ -29,7 +29,7 @@ export default function Solution() {
     };
 
     return (
-        <section id="solution" className="py-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <section id="solution" className="py-20 bg-white relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-30 pointer-events-none" />
 
             <div className="container-custom relative z-10">
