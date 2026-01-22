@@ -10,8 +10,8 @@ export default function Hero() {
         }
     };
 
-    const scrollToSolution = () => {
-        const element = document.querySelector('#solution');
+    const scrollToProblem = () => {
+        const element = document.querySelector('#problem');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -107,7 +107,7 @@ export default function Hero() {
                                 Kostenlose Beratung
                             </button>
                             <button
-                                onClick={scrollToSolution}
+                                onClick={scrollToProblem}
                                 className="px-8 py-4 text-base font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02]"
                                 style={{
                                     backgroundColor: '#ffffff',

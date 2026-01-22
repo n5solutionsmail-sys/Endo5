@@ -36,7 +36,7 @@ export default function Problem() {
     }, []);
 
     return (
-        <section className="pt-24 pb-8 bg-white relative overflow-hidden">
+        <section id="problem" className="pt-24 pb-8 bg-white relative overflow-hidden">
             <div className="container-custom">
                 
                 {/* Minimal Header */}

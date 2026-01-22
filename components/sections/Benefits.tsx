@@ -72,6 +72,15 @@ export default function Benefits() {
             />
 
             <div className="container-custom relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Physikalische Effizienzsteigerung
+                    </h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                        Ein innovatives Additiv, das dem Heizwasser beigemischt wird. Dadurch senken Sie Ihre Energiekosten massiv und reduzieren den CO2-Ausstoß nachhaltig.
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8">
                     {stats.map((stat, i) => (
                         <motion.div
