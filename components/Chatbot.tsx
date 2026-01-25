@@ -2,8 +2,11 @@
 
 import { useChat } from 'ai/react';
 import { useState, useRef, useEffect } from 'react';
-import { Bot, Send, X, MessageCircle, Sparkles, User, Minimize2 } from 'lucide-react';
+import { Send, X, MessageCircle, User, Minimize2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -46,8 +49,14 @@ export default function Chatbot() {
                         {/* Header */}
                         <div className="bg-[#3b82f6] p-4 flex items-center justify-between text-white shrink-0">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
-                                    <Bot className="w-6 h-6 text-white" />
+                                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                    <Image
+                                        src={`${BASE_PATH}/n5-logo.png`}
+                                        alt="N5 Logo"
+                                        width={32}
+                                        height={32}
+                                        className="w-8 h-8 object-contain"
+                                    />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-sm">Endo AI</h3>
@@ -73,9 +82,17 @@ export default function Chatbot() {
                                     className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                 >
                                     <div className={`flex gap-2 max-w-[85%] ${m.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${m.role === 'assistant' ? 'bg-[#3b82f6]/10 text-[#3b82f6]' : 'bg-gray-200 text-gray-600'
+                                        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 overflow-hidden ${m.role === 'assistant' ? 'bg-white border border-gray-100' : 'bg-gray-200 text-gray-600'
                                             }`}>
-                                            {m.role === 'assistant' ? <Bot className="w-5 h-5" /> : <User className="w-5 h-5" />}
+                                            {m.role === 'assistant' ? (
+                                                <Image
+                                                    src={`${BASE_PATH}/n5-logo.png`}
+                                                    alt="N5"
+                                                    width={24}
+                                                    height={24}
+                                                    className="w-6 h-6 object-contain"
+                                                />
+                                            ) : <User className="w-5 h-5" />}
                                         </div>
 
                                         <div className={`p-3 rounded-2xl text-sm leading-relaxed shadow-sm ${m.role === 'user'
@@ -93,8 +110,14 @@ export default function Chatbot() {
                             {isLoading && (
                                 <div className="flex justify-start">
                                     <div className="flex gap-2 max-w-[85%]">
-                                        <div className="w-8 h-8 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] flex items-center justify-center shrink-0">
-                                            <Bot className="w-5 h-5" />
+                                        <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
+                                            <Image
+                                                src={`${BASE_PATH}/n5-logo.png`}
+                                                alt="N5"
+                                                width={24}
+                                                height={24}
+                                                className="w-6 h-6 object-contain"
+                                            />
                                         </div>
                                         <div className="bg-white p-4 rounded-2xl rounded-bl-none shadow-sm border border-gray-100">
                                             <div className="flex gap-1.5">
