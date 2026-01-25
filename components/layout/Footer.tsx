@@ -21,10 +21,15 @@ export default function Footer() {
                                 className="h-14 w-auto"
                             />
                         </div>
-                        <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-                            Heizkosten senken, ohne Umbau. Bis zu 15% sparen mit EndoTherm® –
-                            der smarten Lösung für Ihr Heizsystem.
-                        </p>
+                        <div className="max-w-xs">
+                            <p className="text-gray-900 font-bold mb-2">
+                                Mit EndoTherm, Heizkosten senken.
+                            </p>
+                            <p className="text-gray-500 text-sm leading-relaxed">
+                                EndoTherm steigert die Effizienz Ihrer Heizung und senkt
+                                Ihre Energiekosten um bis zu 15%.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Quick Links */}
@@ -32,28 +37,18 @@ export default function Footer() {
                         <h4 className="font-semibold text-gray-900 mb-5">Navigation</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="#solution" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
+                                <Link href="#benefits" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
                                     Lösung
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#benefits" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
-                                    Vorteile
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#how-it-works" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
+                                <Link href="#solution" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
                                     So funktioniert&apos;s
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#pricing" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
-                                    Preise
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#faq" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
-                                    FAQ
+                                <Link href="#testimonials" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
+                                    Fallstudien
                                 </Link>
                             </li>
                         </ul>
@@ -64,20 +59,15 @@ export default function Footer() {
                         <h4 className="font-semibold text-gray-900 mb-5">Kontakt</h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href="mailto:info@endo5.de" className="text-gray-500 hover:text-green-600 transition-colors text-sm inline-flex items-center gap-1.5">
-                                    info@endo5.de
+                                <a href="mailto:office@endo5.de" className="text-gray-500 hover:text-blue-600 transition-colors text-sm inline-flex items-center gap-1.5">
+                                    office@endo5.de
                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+4940123456789" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
-                                    +49 40 123 456 789
-                                </a>
-                            </li>
-                            <li>
-                                <span className="text-gray-400 text-sm">Hamburg, Deutschland</span>
+                                <span className="text-gray-400 text-sm">München, Deutschland</span>
                             </li>
                         </ul>
                     </div>
@@ -87,18 +77,21 @@ export default function Footer() {
                         <h4 className="font-semibold text-gray-900 mb-5">Rechtliches</h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/impressum" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
+                                <Link 
+                                    href="/impressum" 
+                                    target="_blank"
+                                    className="text-gray-500 hover:text-blue-600 transition-colors text-sm"
+                                >
                                     Impressum
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/datenschutz" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
+                                <Link 
+                                    href="/datenschutz" 
+                                    target="_blank"
+                                    className="text-gray-500 hover:text-blue-600 transition-colors text-sm"
+                                >
                                     Datenschutz
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/agb" className="text-gray-500 hover:text-green-600 transition-colors text-sm">
-                                    AGB
                                 </Link>
                             </li>
                         </ul>

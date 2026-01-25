@@ -6,21 +6,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 const problems = [
     {
         id: '01',
-        title: 'Explodierende Kosten',
-        desc: 'Energiepreise haben sich vervielfacht. Jede Ineffizienz kostet Sie heute doppelt so viel wie früher.',
-        stat: 'Kostenfalle #1'
+        title: 'Erhöhte Betriebskosten',
+        desc: 'Energie ist zu einem zentralen Kostenfaktor geworden. Bereits geringe Effizienzverluste wirken sich heute deutlich stärker auf die laufenden Heizkosten aus als noch vor wenigen Jahren.',
+        stat: 'Kostenproblem'
     },
     {
         id: '02',
         title: 'Versteckte Verschwendung',
-        desc: '90% aller Heizsysteme laufen ineffizient. Sie zahlen für Energie, die gar nicht als Wärme ankommt.',
-        stat: 'Versteckter Verlust'
+        desc: 'Ein Großteil bestehender Heizungsanlagen nutzt die eingesetzte Energie nicht optimal. Wärmeverluste im System führen dazu, dass ein relevanter Anteil der erzeugten Energie nicht effektiv im Gebäude ankommt.',
+        stat: 'Effizienzproblem'
     },
     {
         id: '03',
-        title: 'Teure Alternativen',
-        desc: 'Neue Heizungsanlagen oder Dämmung kosten oft fünfstellige Summen und amortisieren sich erst nach Jahrzehnten – wenn überhaupt.',
-        stat: 'Hohes Invest'
+        title: 'Kapitalintensive Sanierungsmaßnahmen',
+        desc: 'Maßnahmen wie der vollständige Austausch von Heizungsanlagen oder umfassende bauliche Sanierungen sind mit hohen Investitionskosten verbunden. Die Amortisation solcher Maßnahmen erstreckt sich häufig über lange Zeiträume.',
+        stat: 'Investitionsproblem'
     }
 ];
 
@@ -51,9 +51,9 @@ export default function Problem() {
                         Die Realität
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-                        Heizkosten explodieren. <br />
+                        Heizkosten steigen. <br />
                         <span className="block mt-2 text-2xl md:text-3xl font-medium text-gray-500">
-                            Und Ihr Gebäude zahlt den Preis für ineffiziente Wärmeübertragung.
+                            Ineffiziente Wärmeübertragung belastet Gebäude und Budgets.
                         </span>
                     </h2>
 

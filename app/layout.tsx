@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import GridContainer from "@/components/layout/GridContainer";
-import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
-
-
 
 export const metadata: Metadata = {
   title: "Endo5 | Heizkosten senken – bis zu 15% sparen mit EndoTherm®",
@@ -42,12 +36,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
-        <GridContainer>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <Chatbot />
-        </GridContainer>
+        {children}
       </body>
     </html>
   );

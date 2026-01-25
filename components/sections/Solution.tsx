@@ -19,7 +19,7 @@ const solutions = [
 ];
 
 export default function Solution() {
-    const [isAfter, setIsAfter] = useState(false);
+    const [isAfter, setIsAfter] = useState(true);
 
     const scrollToContact = () => {
         const element = document.querySelector('#contact');
