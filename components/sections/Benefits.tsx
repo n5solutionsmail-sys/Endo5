@@ -18,7 +18,7 @@ const stats = [
         label: 'Installation',
         value: '0',
         unit: 'h',
-        sub: 'Betriebsunterbrechung'
+        sub: 'Keine Betriebsunterbrechung'
     },
     {
         label: 'Systemkompatibilität',

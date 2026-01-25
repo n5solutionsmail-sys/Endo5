@@ -107,7 +107,7 @@ export default function Chatbot() {
                                     </div>
                                 </div>
                             ))}
-                            {isLoading && (
+                            {isLoading && (messages.length === 0 || messages[messages.length - 1].role !== 'assistant') && (
                                 <div className="flex justify-start">
                                     <div className="flex gap-2 max-w-[85%]">
                                         <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
