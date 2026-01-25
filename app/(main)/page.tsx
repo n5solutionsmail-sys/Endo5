@@ -19,8 +19,7 @@ export default function Home() {
       <div className="section-divider">
         <Solution />
       </div>
-      <div className="section-divider py-4 space-y-2 bg-slate-50">
-        <h2 className="text-xs font-medium text-center text-muted-foreground">EndoTherm® ist mehrfach ausgezeichnet</h2>
+      <div className="section-divider py-4 bg-slate-50">
         <LogoScroller />
       </div>
       <div className="section-divider">

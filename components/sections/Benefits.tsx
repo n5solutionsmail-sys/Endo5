@@ -18,7 +18,7 @@ const stats = [
         label: 'Installation',
         value: '0',
         unit: 'h',
-        sub: 'Downtime im Betrieb'
+        sub: 'Betriebsunterbrechung'
     },
     {
         label: 'Systemkompatibilität',
