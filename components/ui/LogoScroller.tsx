@@ -44,8 +44,8 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
 
             {/* Title Pill */}
             <div className="flex justify-center mb-4">
-                <span className="inline-block px-5 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-full">
-                    EndoTherm® ist mehrfach ausgezeichnet
+                <span className="inline-block px-5 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-full">
+                    EndoTherm® ist auch mehrfach ausgezeichnet
                 </span>
             </div>
 

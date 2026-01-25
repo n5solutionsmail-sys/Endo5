@@ -18,7 +18,7 @@ const problems = [
     },
     {
         id: '03',
-        title: 'Kapitalintensive Sanierungsmaßnahmen',
+        title: 'Kapitalintesive Sanierungen',
         desc: 'Maßnahmen wie der vollständige Austausch von Heizungsanlagen oder umfassende bauliche Sanierungen sind mit hohen Investitionskosten verbunden. Die Amortisation solcher Maßnahmen erstreckt sich häufig über lange Zeiträume.',
         stat: 'Investitionsproblem'
     }
@@ -38,7 +38,7 @@ export default function Problem() {
     return (
         <section id="problem" className="pt-24 pb-8 bg-white relative overflow-hidden">
             <div className="container-custom">
-                
+
                 {/* Minimal Header */}
                 <motion.div
                     className="max-w-2xl mx-auto text-center mb-16"
@@ -87,7 +87,7 @@ export default function Problem() {
                                         {item.desc}
                                     </p>
                                 </div>
-                                
+
                                 {/* Geometric accent */}
                                 <div className="mt-8 w-12 h-1 bg-gray-100 group-hover:bg-red-500 rounded-full transition-colors duration-500" />
                             </div>
@@ -121,8 +121,8 @@ export default function Problem() {
                         </div>
                         <span>als gedacht.</span>
                     </div>
-                    
-                    <motion.div 
+
+                    <motion.div
                         className="flex justify-center"
                         animate={{ y: [0, 6, 0] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
