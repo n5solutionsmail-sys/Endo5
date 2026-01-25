@@ -22,14 +22,14 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
 
     return (
         <div className={`relative w-full max-w-5xl mx-auto py-8 ${className}`}>
-            
+
             {/* Gradient Overlays for Fade Effect */}
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
             {/* Scrolling track */}
             <div className="w-full overflow-hidden">
-                <div 
+                <div
                     className="flex items-center gap-16 animate-scroll hover:pause"
                     style={{ width: 'max-content' }}
                 >
@@ -37,13 +37,13 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                     {[...Array(3)].map((_, setIndex) => (
                         <div key={setIndex} className="flex items-center gap-16 shrink-0">
                             {logos.map((logo) => (
-                                <div 
-                                    key={`${setIndex}-${logo.id}`} 
+                                <div
+                                    key={`${setIndex}-${logo.id}`}
                                     className="group relative flex flex-col items-center justify-center"
                                     onMouseEnter={() => setHoveredText(logo.name)}
                                     onMouseLeave={() => setHoveredText(null)}
                                 >
-                                    
+
                                     {/* Logo */}
                                     <img
                                         src={`${BASE_PATH}/logos/shell.png`}
