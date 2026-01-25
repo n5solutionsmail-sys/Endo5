@@ -10,14 +10,13 @@ interface LogoScrollerProps {
 
 export default function LogoScroller({ className = '' }: LogoScrollerProps) {
     const [hoveredText, setHoveredText] = useState<string | null>(null);
+    const [isPaused, setIsPaused] = useState(false);
 
     const logos = [
-        { id: 1, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
-        { id: 2, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
-        { id: 3, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
-        { id: 4, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
-        { id: 5, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
-        { id: 6, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner' },
+        { id: 1, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner', image: 'shell.png', alt: 'Shell Award' },
+        { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.png', alt: 'H&V News Award' },
+        { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.png', alt: 'CIBSE Award' },
+        { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.png', alt: 'Energy Efficiency Award' },
     ];
 
     return (
@@ -30,24 +29,30 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
             {/* Scrolling track */}
             <div className="w-full overflow-hidden">
                 <div
-                    className="flex items-center gap-16 animate-scroll hover:pause"
+                    className={`flex items-center gap-16 animate-scroll ${isPaused ? 'paused' : ''}`}
                     style={{ width: 'max-content' }}
                 >
-                    {/* Triple set to ensure no gaps ever on wide screens */}
-                    {[...Array(3)].map((_, setIndex) => (
+                    {/* Duplicate the logos multiple times for seamless infinite scroll */}
+                    {[...Array(6)].map((_, setIndex) => (
                         <div key={setIndex} className="flex items-center gap-16 shrink-0">
                             {logos.map((logo) => (
                                 <div
                                     key={`${setIndex}-${logo.id}`}
                                     className="group relative flex flex-col items-center justify-center"
-                                    onMouseEnter={() => setHoveredText(logo.name)}
-                                    onMouseLeave={() => setHoveredText(null)}
+                                    onMouseEnter={() => {
+                                        setHoveredText(logo.name);
+                                        setIsPaused(true);
+                                    }}
+                                    onMouseLeave={() => {
+                                        setHoveredText(null);
+                                        setIsPaused(false);
+                                    }}
                                 >
 
                                     {/* Logo */}
                                     <img
-                                        src={`${BASE_PATH}/logos/shell.png`}
-                                        alt="Shell Award"
+                                        src={`${BASE_PATH}/logos/${logo.image}`}
+                                        alt={logo.alt}
                                         className="h-12 w-auto object-contain cursor-pointer transition-transform duration-300 group-hover:scale-110"
                                     />
                                 </div>
@@ -70,13 +75,13 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                         transform: translateX(0);
                     }
                     100% {
-                        transform: translateX(-33.333%);
+                        transform: translateX(-50%);
                     }
                 }
                 .animate-scroll {
-                    animation: scroll 40s linear infinite;
+                    animation: scroll 30s linear infinite;
                 }
-                .hover\\:pause:hover {
+                .animate-scroll.paused {
                     animation-play-state: paused;
                 }
             `}</style>
