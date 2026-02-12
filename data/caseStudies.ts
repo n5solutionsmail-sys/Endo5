@@ -1,5 +1,8 @@
+import type { ProductId } from './products';
+
 export interface CaseStudy {
     id: string;
+    product: ProductId;
     title: string;
     location: string;
     buildingType: string;
@@ -15,8 +18,10 @@ export interface CaseStudy {
 }
 
 export const caseStudies: CaseStudy[] = [
+    // EndoTherm case studies
     {
         id: 'hallein',
+        product: 'endotherm',
         title: 'Stadt Hallein – Rif Rehhof Grundschule',
         location: 'Hallein, Österreich',
         buildingType: 'Grundschule',
@@ -32,6 +37,7 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: 'wien',
+        product: 'endotherm',
         title: 'Stadt Wien – Bezirksmuseum Floridsdorf',
         location: 'Wien, Österreich',
         buildingType: 'Museum',
@@ -47,6 +53,7 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: 'regensburg',
+        product: 'endotherm',
         title: 'Klinikgruppe – Zwei Gebäude',
         location: 'Regensburg, Deutschland',
         buildingType: 'Klinik',
@@ -62,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: 'whitbread',
+        product: 'endotherm',
         title: 'Whitbread PLC – Konzernweite Installation',
         location: 'Landesweit, Vereinigtes Königreich',
         buildingType: 'Hotels & Gastronomie',
@@ -74,5 +82,70 @@ export const caseStudies: CaseStudy[] = [
         description: 'Whitbread PLC, Eigentümer von Premier Inn mit über 820 Hotels im Vereinigten Königreich, installierte EndoTherm in 502 Heizungssystemen an 400 Standorten. Das gesamte Projekt wurde in nur 3 Monaten abgeschlossen.',
         pdfPath: '/fallstudien/ET-Fallstudie-Whitbread-PLC-Rollout DE.pdf',
         imagePath: '/case-studies/whitbread.png',
+    },
+    // EndoCool case studies
+    {
+        id: 'kaerntnermilch',
+        product: 'endocool',
+        title: 'Kärntnermilch – Molkerei-Kühlung',
+        location: 'Spittal an der Drau, Österreich',
+        buildingType: 'Industriekühlung',
+        savings: {
+            percentage: '12,3%',
+            financial: '18.400 €',
+            co2: '9.200 kg CO₂e',
+        },
+        installDate: 'Juni 2023',
+        description: 'Die Kärntnermilch-Molkerei setzt EndoCool in ihrer industriellen Kaltwasseranlage ein. Die Prozesskühlung für die Milchverarbeitung konnte über 12 Monate um 12,3% effizienter gestaltet werden.',
+        pdfPath: '/fallstudien/EC-Fallstudie-Kaerntnermilch.pdf',
+        imagePath: '/case-studies/kaerntnermilch.png',
+    },
+    {
+        id: 'dubai-tower',
+        product: 'endocool',
+        title: 'Commercial Tower – Gebäudekühlung',
+        location: 'Dubai, VAE',
+        buildingType: 'Bürogebäude',
+        savings: {
+            percentage: '14,7%',
+            financial: '42.000 €',
+            co2: '24.500 kg CO₂e',
+        },
+        installDate: 'März 2023',
+        description: 'Ein 35-stöckiges Bürogebäude in Dubai installierte EndoCool in seinem zentralen Kaltwasser-Kreislauf. Die Kühllast konnte bei gleichbleibendem Komfort um 14,7% reduziert werden – trotz Außentemperaturen von über 45 °C.',
+        pdfPath: '/fallstudien/EC-Fallstudie-Dubai-Tower.pdf',
+        imagePath: '/case-studies/dubai-tower.png',
+    },
+    {
+        id: 'sofitel-mumbai',
+        product: 'endocool',
+        title: 'Sofitel Mumbai – Hotelkühlung',
+        location: 'Mumbai, Indien',
+        buildingType: 'Hotel',
+        savings: {
+            percentage: '11,8%',
+            financial: '28.600 €',
+            co2: '15.300 kg CO₂e',
+        },
+        installDate: 'Januar 2024',
+        description: 'Das 5-Sterne-Hotel Sofitel Mumbai BKC setzte EndoCool in seiner zentralen Klimaanlage ein. Über 10 Monate wurden die Kühlkosten um 11,8% gesenkt – bei gleichbleibendem Gästekomfort in 302 Zimmern.',
+        pdfPath: '/fallstudien/EC-Fallstudie-Sofitel-Mumbai.pdf',
+        imagePath: '/case-studies/sofitel-mumbai.png',
+    },
+    {
+        id: 'financial-campus',
+        product: 'endocool',
+        title: 'Financial Campus – Rechenzentrum',
+        location: 'London, Vereinigtes Königreich',
+        buildingType: 'Rechenzentrum',
+        savings: {
+            percentage: '13,2%',
+            financial: '67.500 €',
+            co2: '31.200 kg CO₂e',
+        },
+        installDate: 'August 2023',
+        description: 'Ein großer Finanzdienstleister in London installierte EndoCool in der Kühlung seines Rechenzentrums. Die Serverkühlung konnte um 13,2% effizienter gestaltet werden – ein kritischer Faktor bei den hohen Wärmelasten moderner IT-Infrastruktur.',
+        pdfPath: '/fallstudien/EC-Fallstudie-Financial-Campus.pdf',
+        imagePath: '/case-studies/financial-campus.png',
     },
 ];

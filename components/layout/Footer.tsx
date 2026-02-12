@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="bg-white overflow-hidden mt-16">
             <div className="container-custom pt-16 pb-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2 mb-5">
@@ -23,13 +23,30 @@ export default function Footer() {
                         </div>
                         <div className="max-w-xs">
                             <p className="text-gray-900 font-bold mb-2">
-                                Mit EndoTherm, Heizkosten senken.
+                                Energiekosten senken – Heizung & Kühlung.
                             </p>
                             <p className="text-gray-500 text-sm leading-relaxed">
-                                EndoTherm steigert die Effizienz Ihrer Heizung und senkt
-                                Ihre Energiekosten um bis zu 15%.
+                                EndoTherm® und EndoCool® steigern die Effizienz Ihrer Heiz- und Kühlsysteme
+                                und senken Ihre Energiekosten um bis zu 15%.
                             </p>
                         </div>
+                    </div>
+
+                    {/* Produkte */}
+                    <div>
+                        <h4 className="font-semibold text-gray-900 mb-5">Produkte</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link href="/" className="text-gray-500 hover:text-blue-600 transition-colors text-sm">
+                                    EndoTherm® – Heizung
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/cool" className="text-gray-500 hover:text-cyan-600 transition-colors text-sm">
+                                    EndoCool® – Kühlung
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
 
                     {/* Quick Links */}

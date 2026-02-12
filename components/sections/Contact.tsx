@@ -75,7 +75,7 @@ export default function Contact() {
                     </div>
 
                     <p className="text-xl text-gray-600">
-                        Wir analysieren Ihr Einsparpotenzial komplett kostenlos.
+                        Wir analysieren Ihr Einsparpotenzial für Heizung und Kühlung komplett kostenlos.
                     </p>
                 </motion.div>
 

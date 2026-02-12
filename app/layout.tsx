@@ -8,19 +8,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Endo5 | Heizkosten senken – bis zu 15% sparen mit EndoTherm®",
-  description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® – der smarten Lösung für Ihr Heizsystem. Jetzt kostenlos beraten lassen!",
-  keywords: "Heizkosten senken, Heizkosten sparen, EndoTherm, Heizungsoptimierung, Energiekosten reduzieren, Heizung optimieren",
+  title: "Endo5 | Energiekosten senken – bis zu 15% sparen mit EndoTherm® & EndoCool®",
+  description: "Reduzieren Sie Ihre Heiz- und Kühlkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® (Heizung) und EndoCool® (Kühlung) – die smarten Lösungen von N5 Solutions. Jetzt kostenlos beraten lassen!",
+  keywords: "Heizkosten senken, Kühlkosten senken, EndoTherm, EndoCool, Heizungsoptimierung, Kühlsystem optimieren, Energiekosten reduzieren, HVAC Effizienz",
   openGraph: {
-    title: "Endo5 | Heizkosten senken – bis zu 15% sparen",
-    description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm®.",
+    title: "Endo5 | Energiekosten senken – bis zu 15% sparen",
+    description: "Reduzieren Sie Ihre Heiz- und Kühlkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® & EndoCool®.",
     type: "website",
     locale: "de_DE",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Endo5 | Heizkosten senken – bis zu 15% sparen",
-    description: "Reduzieren Sie Ihre Heizkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm®.",
+    title: "Endo5 | Energiekosten senken – bis zu 15% sparen",
+    description: "Reduzieren Sie Ihre Heiz- und Kühlkosten sofort und ohne Umbau. Bis zu 15% Einsparung mit EndoTherm® & EndoCool®.",
   },
   robots: {
     index: true,

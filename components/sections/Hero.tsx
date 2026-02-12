@@ -10,8 +10,8 @@ export default function Hero() {
         }
     };
 
-    const scrollToProblem = () => {
-        const element = document.querySelector('#problem');
+    const scrollToSolution = (product: 'endotherm' | 'endocool') => {
+        const element = document.querySelector('#solution');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -36,31 +36,29 @@ export default function Hero() {
                 />
             </div>
 
-
-
             {/* Content */}
             <div className="relative z-10 min-h-screen flex items-center pt-20">
                 <div className="w-full px-4 sm:px-6 lg:px-8">
                     <div className="max-w-2xl mx-auto text-center">
 
-                        {/* Headline - 2 lines max */}
+                        {/* Headline */}
                         <h1
                             className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
                             style={{ color: '#ffffff', textShadow }}
                         >
-                            Heizkosten senken.
+                            Energiekosten senken.
                             <br />
-                            <span className="text-blue-400">Mit EndoTherm.</span>
+                            <span className="text-blue-400">Einfach und effektiv.</span>
                         </h1>
 
-                        {/* Subtext - 2 lines max */}
+                        {/* Subtext */}
                         <p
                             className="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl mx-auto"
                             style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
                         >
-                            EndoTherm steigert die Effizienz Ihrer Heizung und senkt
+                            Unsere Additive steigern die Effizienz Ihrer
                             <br />
-                            Ihre Energiekosten um bis zu 15%, einfach und preiswert.
+                            Heiz- und Kühlsysteme und senken Ihre Energiekosten um bis zu 15%.
                         </p>
 
                         {/* Trust Badges */}
@@ -81,7 +79,7 @@ export default function Hero() {
                                 <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                 </svg>
-                                Alle Heizsysteme
+                                Heizung & Kühlung
                             </span>
                             <span
                                 className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
@@ -107,7 +105,10 @@ export default function Hero() {
                                 Kostenlose Beratung
                             </button>
                             <button
-                                onClick={scrollToProblem}
+                                onClick={() => {
+                                    const element = document.querySelector('#problem');
+                                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                                }}
                                 className="px-8 py-4 text-base font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02]"
                                 style={{
                                     backgroundColor: '#ffffff',

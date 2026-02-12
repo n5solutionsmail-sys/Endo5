@@ -6,7 +6,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import LogoScroller from "@/components/ui/LogoScroller";
 
-export default function Home() {
+export default function CoolPage() {
   return (
     <>
       <Hero />
@@ -14,16 +14,16 @@ export default function Home() {
         <Problem />
       </div>
       <div className="section-divider">
-        <Benefits productId="endotherm" />
+        <Benefits productId="endocool" />
       </div>
       <div className="section-divider">
-        <Solution productId="endotherm" />
+        <Solution productId="endocool" />
       </div>
       <div className="section-divider py-4 bg-slate-50">
         <LogoScroller />
       </div>
       <div className="section-divider">
-        <Testimonials productId="endotherm" />
+        <Testimonials productId="endocool" />
       </div>
       <Contact />
     </>

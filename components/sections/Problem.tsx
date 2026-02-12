@@ -7,19 +7,19 @@ const problems = [
     {
         id: '01',
         title: 'Erhöhte Betriebskosten',
-        desc: 'Energie ist zu einem zentralen Kostenfaktor geworden. Bereits geringe Effizienzverluste wirken sich heute deutlich stärker auf die laufenden Heizkosten aus als noch vor wenigen Jahren.',
+        desc: 'Energie ist zu einem zentralen Kostenfaktor geworden. Bereits geringe Effizienzverluste wirken sich heute deutlich stärker auf die laufenden Heiz- und Kühlkosten aus als noch vor wenigen Jahren.',
         stat: 'Kostenproblem'
     },
     {
         id: '02',
         title: 'Versteckte Verschwendung',
-        desc: 'Ein Großteil bestehender Heizungsanlagen nutzt die eingesetzte Energie nicht optimal. Wärmeverluste im System führen dazu, dass ein relevanter Anteil der erzeugten Energie nicht effektiv im Gebäude ankommt.',
+        desc: 'Ein Großteil bestehender Heiz- und Kühlanlagen nutzt die eingesetzte Energie nicht optimal. Wärmeverluste und ineffiziente Wärmeabfuhr führen dazu, dass ein relevanter Anteil der Energie nicht effektiv genutzt wird.',
         stat: 'Effizienzproblem'
     },
     {
         id: '03',
         title: 'Kapitalintesive Sanierungen',
-        desc: 'Maßnahmen wie der vollständige Austausch von Heizungsanlagen oder umfassende bauliche Sanierungen sind mit hohen Investitionskosten verbunden. Die Amortisation solcher Maßnahmen erstreckt sich häufig über lange Zeiträume.',
+        desc: 'Maßnahmen wie der vollständige Austausch von Heiz- oder Kühlanlagen oder umfassende bauliche Sanierungen sind mit hohen Investitionskosten verbunden. Die Amortisation solcher Maßnahmen erstreckt sich häufig über lange Zeiträume.',
         stat: 'Investitionsproblem'
     }
 ];
@@ -51,9 +51,9 @@ export default function Problem() {
                         Die Realität
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-                        Heizkosten steigen. <br />
+                        Energiekosten steigen. <br />
                         <span className="block mt-2 text-2xl md:text-3xl font-medium text-gray-500">
-                            Ineffiziente Wärmeübertragung belastet Gebäude und Budgets.
+                            Ineffiziente Heiz- und Kühlanlagen belasten Gebäude und Budgets.
                         </span>
                     </h2>
 

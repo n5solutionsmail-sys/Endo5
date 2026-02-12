@@ -19,6 +19,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
         { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.png', alt: 'H&V News Award' },
         { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.png', alt: 'CIBSE Award' },
         { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.png', alt: 'Energy Efficiency Award' },
+        { id: 5, name: 'RAC COOLING AWARD 2021 - COOLING PRODUCT OF THE YEAR (EndoCool®)', image: 'rac-cooling-award.png', alt: 'RAC Cooling Award' },
     ];
 
     // Auto-cycle through descriptions when not hovering
@@ -45,7 +46,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
             {/* Title Pill */}
             <div className="flex justify-center mb-4">
                 <span className="inline-block px-5 py-2 text-sm font-bold text-blue-600 bg-blue-50 rounded-full">
-                    EndoTherm® ist auch mehrfach ausgezeichnet
+                    Mehrfach ausgezeichnete Endo-Technologie
                 </span>
             </div>
 

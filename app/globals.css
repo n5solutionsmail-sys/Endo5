@@ -13,6 +13,11 @@
   --primary-dark: #1a1a2e;
   --primary-light: #ffffff;
 
+  /* EndoCool Colors */
+  --endocool-primary: #06b6d4;
+  --endocool-dark: #0891b2;
+  --endocool-light: #22d3ee;
+
   /* Accent Colors */
   --accent-orange: #f97316;
   --accent-orange-dark: #ea580c;
@@ -54,6 +59,7 @@
   --color-primary-blue: var(--primary-blue);
   --color-primary-dark: var(--primary-dark);
   --color-accent-orange: var(--accent-orange);
+  --color-endocool: var(--endocool-primary);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 

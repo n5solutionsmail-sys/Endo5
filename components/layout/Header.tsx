@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -15,15 +15,26 @@ const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isProductsOpen, setIsProductsOpen] = useState(false);
+    const productsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Transition after scrolling past ~100px (adjustable)
             setIsScrolled(window.scrollY > 80);
         };
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Check initial state
+        handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (productsRef.current && !productsRef.current.contains(e.target as Node)) {
+                setIsProductsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -32,6 +43,7 @@ export default function Header() {
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
             setIsMobileMenuOpen(false);
+            setIsProductsOpen(false);
         }
     };
 
@@ -62,6 +74,68 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center gap-1 mr-auto">
+                    {/* Produkte Dropdown */}
+                    <div ref={productsRef} className="relative">
+                        <button
+                            onClick={() => setIsProductsOpen(!isProductsOpen)}
+                            className={`relative px-5 py-2.5 font-medium text-sm tracking-wide transition-all duration-300 rounded-full group flex items-center gap-1 ${isScrolled
+                                ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                : 'text-white/90 hover:text-white hover:bg-white/10'
+                                }`}
+                        >
+                            Produkte
+                            <svg
+                                className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Dropdown Menu */}
+                        <div
+                            className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 ${isProductsOpen
+                                ? 'opacity-100 translate-y-0 pointer-events-auto'
+                                : 'opacity-0 -translate-y-2 pointer-events-none'
+                                }`}
+                        >
+                            <div className="p-2">
+                                <Link
+                                    href="/"
+                                    onClick={() => setIsProductsOpen(false)}
+                                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group"
+                                >
+                                    <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div className="font-semibold text-sm text-gray-900">EndoTherm®</div>
+                                        <div className="text-xs text-gray-500">Heizkosten senken</div>
+                                    </div>
+                                </Link>
+                                <Link
+                                    href="/cool"
+                                    onClick={() => setIsProductsOpen(false)}
+                                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-cyan-50 transition-colors group"
+                                >
+                                    <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
+                                        <svg className="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div className="font-semibold text-sm text-gray-900">EndoCool®</div>
+                                        <div className="text-xs text-gray-500">Kühlkosten senken</div>
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
                     {navItems.map((item) => (
                         <a
                             key={item.href}
@@ -138,7 +212,7 @@ export default function Header() {
             {/* Mobile Menu */}
             <div
                 className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-500 ease-out overflow-hidden ${isMobileMenuOpen
-                    ? 'max-h-[400px] opacity-100'
+                    ? 'max-h-[500px] opacity-100'
                     : 'max-h-0 opacity-0'
                     }`}
             >
@@ -149,6 +223,35 @@ export default function Header() {
                         }`}
                 >
                     <nav className="flex flex-col gap-1">
+                        {/* Produkte Section */}
+                        <div className={`px-4 py-2 text-xs font-bold uppercase tracking-wider ${isScrolled ? 'text-gray-400' : 'text-white/50'}`}>
+                            Produkte
+                        </div>
+                        <Link
+                            href="/"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 ${isScrolled
+                                ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                                : 'text-white/90 hover:text-white hover:bg-white/10'
+                                }`}
+                        >
+                            <span className="w-2 h-2 rounded-full bg-blue-500" />
+                            EndoTherm® – Heizung
+                        </Link>
+                        <Link
+                            href="/cool"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 ${isScrolled
+                                ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                                : 'text-white/90 hover:text-white hover:bg-white/10'
+                                }`}
+                        >
+                            <span className="w-2 h-2 rounded-full bg-cyan-500" />
+                            EndoCool® – Kühlung
+                        </Link>
+
+                        <div className={`my-1 border-t ${isScrolled ? 'border-gray-200/50' : 'border-white/10'}`} />
+
                         {navItems.map((item) => (
                             <a
                                 key={item.href}

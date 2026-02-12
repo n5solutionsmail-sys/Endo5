@@ -16,7 +16,7 @@ export default function Chatbot() {
             {
                 id: 'welcome',
                 role: 'assistant',
-                content: 'Hallo! Ich bin Endo, Ihr persönlicher Energiespar-Assistent. Haben Sie Fragen zu EndoTherm oder möchten Sie wissen, wie viel Sie sparen können?'
+                content: 'Hallo! Ich bin Endo, Ihr persönlicher Energiespar-Assistent. Haben Sie Fragen zu EndoTherm® (Heizung) oder EndoCool® (Kühlung)? Ich helfe Ihnen gerne, Ihr Einsparpotenzial zu berechnen!'
             }
         ]
     });
