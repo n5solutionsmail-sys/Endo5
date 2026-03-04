@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Juni 2023',
         description: 'Die Kärntnermilch-Molkerei setzt EndoCool in ihrer industriellen Kaltwasseranlage ein. Die Prozesskühlung für die Milchverarbeitung konnte über 12 Monate um 12,3% effizienter gestaltet werden.',
         pdfPath: '/fallstudien/EC-Fallstudie-Kaerntnermilch.pdf',
-        imagePath: '/case-studies/kaerntnermilch.png',
+        imagePath: '/case-studies/hallein.png',
     },
     {
         id: 'dubai-tower',
@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'März 2023',
         description: 'Ein 35-stöckiges Bürogebäude in Dubai installierte EndoCool in seinem zentralen Kaltwasser-Kreislauf. Die Kühllast konnte bei gleichbleibendem Komfort um 14,7% reduziert werden – trotz Außentemperaturen von über 45 °C.',
         pdfPath: '/fallstudien/EC-Fallstudie-Dubai-Tower.pdf',
-        imagePath: '/case-studies/dubai-tower.png',
+        imagePath: '/case-studies/regensburg.png',
     },
     {
         id: 'sofitel-mumbai',
@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Januar 2024',
         description: 'Das 5-Sterne-Hotel Sofitel Mumbai BKC setzte EndoCool in seiner zentralen Klimaanlage ein. Über 10 Monate wurden die Kühlkosten um 11,8% gesenkt – bei gleichbleibendem Gästekomfort in 302 Zimmern.',
         pdfPath: '/fallstudien/EC-Fallstudie-Sofitel-Mumbai.pdf',
-        imagePath: '/case-studies/sofitel-mumbai.png',
+        imagePath: '/case-studies/wien.png',
     },
     {
         id: 'financial-campus',
@@ -146,6 +146,6 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'August 2023',
         description: 'Ein großer Finanzdienstleister in London installierte EndoCool in der Kühlung seines Rechenzentrums. Die Serverkühlung konnte um 13,2% effizienter gestaltet werden – ein kritischer Faktor bei den hohen Wärmelasten moderner IT-Infrastruktur.',
         pdfPath: '/fallstudien/EC-Fallstudie-Financial-Campus.pdf',
-        imagePath: '/case-studies/financial-campus.png',
+        imagePath: '/case-studies/whitbread.png',
     },
 ];

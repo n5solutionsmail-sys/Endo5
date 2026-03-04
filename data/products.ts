@@ -133,8 +133,8 @@ export const products: Record<ProductId, ProductConfig> = {
         solutionTitle: 'EndoCool® einfach erklärt',
         solutionSubtitle: 'Ein Additiv für Ihr Kaltwasser – verbessert die Wärmeabfuhr in Kühlsystemen.',
         resultText: 'Bis zu 15% weniger Kühlkosten – ohne Umbau, große Investition oder Betriebsunterbrechung.',
-        beforeImage: '/images/cooling-before.png',
-        afterImage: '/images/cooling-after.png',
+        beforeImage: '/images/heating-before.png',
+        afterImage: '/images/heating-after.png',
     },
 };
 
