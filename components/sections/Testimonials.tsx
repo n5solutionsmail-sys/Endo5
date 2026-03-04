@@ -1,10 +1,29 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { caseStudies } from '@/data/caseStudies';
 import { products } from '@/data/products';
 import type { ProductId } from '@/data/products';
+
+function LazyCardImage({ imagePath, className, children }: { imagePath: string; className: string; children?: React.ReactNode }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
+    useEffect(() => {
+        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { rootMargin: '200px' });
+        if (ref.current) obs.observe(ref.current);
+        return () => obs.disconnect();
+    }, []);
+    return (
+        <div
+            ref={ref}
+            className={className}
+            style={visible ? { backgroundImage: `url(${imagePath})` } : {}}
+        >
+            {children}
+        </div>
+    );
+}
 
 
 
@@ -70,9 +89,9 @@ export default function Testimonials({ productId = 'endotherm' }: TestimonialsPr
                                 }}
                             >
                                 {/* Image Section with badge overlay */}
-                                <div
+                                <LazyCardImage
+                                    imagePath={study.imagePath}
                                     className="relative h-28 bg-cover bg-center bg-gray-100"
-                                    style={{ backgroundImage: `url(${study.imagePath})` }}
                                 >
                                     {/* Product Badge */}
                                     <span
@@ -92,7 +111,7 @@ export default function Testimonials({ productId = 'endotherm' }: TestimonialsPr
                                     >
                                         {study.buildingType}
                                     </span>
-                                </div>
+                                </LazyCardImage>
 
                                 {/* Content Section */}
                                 <div className={`p-3 flex-1 ${index === activeIndex ? '' : 'bg-white'}`}

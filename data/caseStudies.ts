@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'März 2024',
         description: 'Hallein, die Bezirkshauptstadt des Tennengaus und zweitgrößte Stadt im Bundesland Salzburg, ist Teilnehmer am e5-Programm „Energieeffiziente Gemeinde". Das Pilotprojekt an der Grundschule Rif Rehhof hat über 15 Monate insgesamt 25.133 kWh eingespart.',
         pdfPath: '/fallstudien/ET-Fallstudie Stadt Hallein - Rif Rehhof Grundschule.pdf',
-        imagePath: '/case-studies/hallein.png',
+        imagePath: '/case-studies/hallein.webp',
     },
     {
         id: 'wien',
@@ -49,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Januar 2024',
         description: 'Das im Jahr 1900 als Villa errichtete Gebäude beherbergt seit 1960 das Bezirksmuseum Floridsdorf. Die Stadt Wien startete hier ein EndoTherm-Pilotprojekt, das über 15 Monate insgesamt 25.122 kWh einsparte.',
         pdfPath: '/fallstudien/ET-Fallstudie Stadt Wien - Bezirksmuseum Floridsdorf.pdf',
-        imagePath: '/case-studies/wien.png',
+        imagePath: '/case-studies/wien.webp',
     },
     {
         id: 'regensburg',
@@ -65,7 +65,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Oktober 2022',
         description: 'Ein Proof-of-Concept-Pilotprojekt einer Klinikgruppe in Regensburg mit zwei Gebäuden. Über 7 Monate wurden insgesamt 73.947 kWh eingespart, mit einer Amortisationszeit von nur 2 Jahren.',
         pdfPath: '/fallstudien/ET-Fallstudie-Klinikgruppe Regensburg.pdf',
-        imagePath: '/case-studies/regensburg.png',
+        imagePath: '/case-studies/regensburg.webp',
     },
     {
         id: 'whitbread',
@@ -81,7 +81,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Sep – Dez 2021',
         description: 'Whitbread PLC, Eigentümer von Premier Inn mit über 820 Hotels im Vereinigten Königreich, installierte EndoTherm in 502 Heizungssystemen an 400 Standorten. Das gesamte Projekt wurde in nur 3 Monaten abgeschlossen.',
         pdfPath: '/fallstudien/ET-Fallstudie-Whitbread-PLC-Rollout DE.pdf',
-        imagePath: '/case-studies/whitbread.png',
+        imagePath: '/case-studies/whitbread.webp',
     },
     // EndoCool case studies
     {
@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Juni 2023',
         description: 'Die Kärntnermilch-Molkerei setzt EndoCool in ihrer industriellen Kaltwasseranlage ein. Die Prozesskühlung für die Milchverarbeitung konnte über 12 Monate um 12,3% effizienter gestaltet werden.',
         pdfPath: '/fallstudien/EC_Fallstudie_Kaerntnermilch_Oesterreich.pdf',
-        imagePath: '/case-studies/kaerntnermilch.png',
+        imagePath: '/case-studies/kaerntnermilch.webp',
     },
     {
         id: 'park-place-dubai',
@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'März 2023',
         description: 'Ein Bürogebäude im Park Place in Dubai installierte EndoCool in seinem zentralen Kaltwasser-Kreislauf. Die Kühllast konnte bei gleichbleibendem Komfort deutlich reduziert werden – trotz Außentemperaturen von über 45 °C.',
         pdfPath: '/fallstudien/EndoCool-Case-Study-Park-Place-Dubai-v4.pdf',
-        imagePath: '/case-studies/dubai.png',
+        imagePath: '/case-studies/dubai.webp',
     },
     {
         id: 'sofitel-mumbai',
@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Januar 2024',
         description: 'Das 5-Sterne-Hotel Sofitel Mumbai BKC setzte EndoCool (mit Tabreed im IFC TechEmerge) in seiner zentralen Klimaanlage ein. Über 10 Monate wurden die Kühlkosten effizient gesenkt – bei gleichbleibendem Gästekomfort in 302 Zimmern.',
         pdfPath: '/fallstudien/EndoCool-Case-Study-IFC-TechEmerge-Tabreed-Sofitel-Mumbai.pdf',
-        imagePath: '/case-studies/sofitel-mumbai.png',
+        imagePath: '/case-studies/sofitel-mumbai.webp',
     },
     {
         id: 'hilton-food',
@@ -146,6 +146,6 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'August 2023',
         description: 'Die Hilton Food Group installierte EndoCool zur Optimierung der Prozesskühlung. Die Anlage konnte deutlich effizienter gestaltet werden – ein kritischer Faktor in der Lebensmittelindustrie.',
         pdfPath: '/fallstudien/EndoCool-Case-Study-Hilton-Food-Group-v2.pdf',
-        imagePath: '/case-studies/hilton.png',
+        imagePath: '/case-studies/hilton.webp',
     },
 ];
