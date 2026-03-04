@@ -146,6 +146,6 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'August 2023',
         description: 'Die Hilton Food Group installierte EndoCool zur Optimierung der Prozesskühlung. Die Anlage konnte deutlich effizienter gestaltet werden – ein kritischer Faktor in der Lebensmittelindustrie.',
         pdfPath: '/fallstudien/EndoCool-Case-Study-Hilton-Food-Group-v2.pdf',
-        imagePath: '/case-studies/whitbread.png',
+        imagePath: '/case-studies/hilton.png',
     },
 ];
