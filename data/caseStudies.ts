@@ -98,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Juni 2023',
         description: 'Die Kärntnermilch-Molkerei setzt EndoCool in ihrer industriellen Kaltwasseranlage ein. Die Prozesskühlung für die Milchverarbeitung konnte über 12 Monate um 12,3% effizienter gestaltet werden.',
         pdfPath: '/fallstudien/EC_Fallstudie_Kaerntnermilch_Oesterreich.pdf',
-        imagePath: '/case-studies/hallein.png',
+        imagePath: '/case-studies/kaerntnermilch.png',
     },
     {
         id: 'park-place-dubai',
