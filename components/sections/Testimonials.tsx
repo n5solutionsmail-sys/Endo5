@@ -46,7 +46,7 @@ export default function Testimonials({ productId = 'endotherm' }: TestimonialsPr
                         Fallstudien
                     </span>
                     <h2 className="mb-6">
-                        Echte Ergebnisse aus <span className="gradient-text">echten Projekten</span>
+                        Fallstudien aus <span className="gradient-text">echten Projekten</span>
                     </h2>
                     <p className="text-xl text-gray-600">
                         Entdecken Sie, wie unsere Kunden messbare Einsparungen erzielen.

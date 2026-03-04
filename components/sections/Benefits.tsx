@@ -91,7 +91,16 @@ export default function Benefits({ productId = 'endotherm' }: BenefitsProps) {
                                 <span className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight transition-colors duration-300"
                                     style={{ '--hover-color': product.color } as React.CSSProperties}
                                 >
-                                    {stat.value}
+                                    {typeof stat.value === 'string' && stat.value.includes('bis zu ') ? (
+                                        <>
+                                            <span className="text-2xl md:text-3xl font-medium opacity-60 mr-1.5 inline-block -translate-y-[2px]">
+                                                bis zu
+                                            </span>
+                                            {stat.value.replace('bis zu ', '')}
+                                        </>
+                                    ) : (
+                                        stat.value
+                                    )}
                                 </span>
                                 {stat.unit && (
                                     <span className="text-lg md:text-xl font-medium text-slate-500">

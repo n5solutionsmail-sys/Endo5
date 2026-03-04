@@ -19,7 +19,6 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
         { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.png', alt: 'H&V News Award' },
         { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.png', alt: 'CIBSE Award' },
         { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.png', alt: 'Energy Efficiency Award' },
-        { id: 5, name: 'Fulcrum Award', image: 'fulcrum.png', alt: 'Fulcrum Award' },
     ];
 
     // Auto-cycle through descriptions when not hovering

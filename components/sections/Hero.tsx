@@ -39,7 +39,7 @@ export default function Hero() {
             {/* Content */}
             <div className="relative z-10 min-h-screen flex items-center pt-20">
                 <div className="w-full px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-2xl mx-auto text-center">
+                    <div className="max-w-4xl mx-auto text-center">
 
                         {/* Headline */}
                         <h1
@@ -53,11 +53,11 @@ export default function Hero() {
 
                         {/* Subtext */}
                         <p
-                            className="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl mx-auto"
+                            className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
                             style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
                         >
                             Unsere Additive steigern die Effizienz Ihrer
-                            <br />
+                            <br className="hidden sm:block" />
                             Heiz- und Kühlsysteme und senken Ihre Energiekosten um bis zu 15%.
                         </p>
 

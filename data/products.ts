@@ -45,7 +45,7 @@ export const products: Record<ProductId, ProductConfig> = {
         stats: [
             {
                 label: 'Heizkosten senken',
-                value: '-15%',
+                value: 'bis zu 15%',
                 sub: 'Sofort ab Installation',
             },
             {
@@ -97,7 +97,7 @@ export const products: Record<ProductId, ProductConfig> = {
         stats: [
             {
                 label: 'Kühlkosten senken',
-                value: '-15%',
+                value: 'bis zu 15%',
                 sub: 'Sofort ab Installation',
             },
             {
