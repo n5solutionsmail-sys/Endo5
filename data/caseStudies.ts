@@ -130,7 +130,7 @@ export const caseStudies: CaseStudy[] = [
         installDate: 'Januar 2024',
         description: 'Das 5-Sterne-Hotel Sofitel Mumbai BKC setzte EndoCool (mit Tabreed im IFC TechEmerge) in seiner zentralen Klimaanlage ein. Über 10 Monate wurden die Kühlkosten effizient gesenkt – bei gleichbleibendem Gästekomfort in 302 Zimmern.',
         pdfPath: '/fallstudien/EndoCool-Case-Study-IFC-TechEmerge-Tabreed-Sofitel-Mumbai.pdf',
-        imagePath: '/case-studies/wien.png',
+        imagePath: '/case-studies/sofitel-mumbai.png',
     },
     {
         id: 'hilton-food',
