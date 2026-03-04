@@ -6,7 +6,7 @@ import { Send, X, MessageCircle, User, Minimize2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +51,7 @@ export default function Chatbot() {
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
                                     <Image
-                                        src={`${BASE_PATH}/n5-logo.png`}
+                                        src="/n5-logo.png"
                                         alt="N5 Logo"
                                         width={32}
                                         height={32}
@@ -86,7 +86,7 @@ export default function Chatbot() {
                                             }`}>
                                             {m.role === 'assistant' ? (
                                                 <Image
-                                                    src={`${BASE_PATH}/n5-logo.png`}
+                                                    src="/n5-logo.png"
                                                     alt="N5"
                                                     width={24}
                                                     height={24}
@@ -112,7 +112,7 @@ export default function Chatbot() {
                                     <div className="flex gap-2 max-w-[85%]">
                                         <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
                                             <Image
-                                                src={`${BASE_PATH}/n5-logo.png`}
+                                                src="/n5-logo.png"
                                                 alt="N5"
                                                 width={24}
                                                 height={24}

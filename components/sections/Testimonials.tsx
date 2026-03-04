@@ -6,7 +6,7 @@ import { caseStudies } from '@/data/caseStudies';
 import { products } from '@/data/products';
 import type { ProductId } from '@/data/products';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 interface TestimonialsProps {
     productId?: ProductId;
@@ -72,7 +72,7 @@ export default function Testimonials({ productId = 'endotherm' }: TestimonialsPr
                                 {/* Image Section with badge overlay */}
                                 <div
                                     className="relative h-28 bg-cover bg-center bg-gray-100"
-                                    style={{ backgroundImage: `url(${BASE_PATH}${study.imagePath})` }}
+                                    style={{ backgroundImage: `url(${study.imagePath})` }}
                                 >
                                     {/* Product Badge */}
                                     <span
@@ -179,7 +179,7 @@ export default function Testimonials({ productId = 'endotherm' }: TestimonialsPr
 
                                     {/* Download Button */}
                                     <a
-                                        href={`${BASE_PATH}${activeCase.pdfPath}`}
+                                        href={activeCase.pdfPath}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:opacity-90"

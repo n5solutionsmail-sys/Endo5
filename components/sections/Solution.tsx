@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { products } from '@/data/products';
 import type { ProductId } from '@/data/products';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 interface SolutionProps {
     productId?: ProductId;
@@ -79,7 +79,7 @@ export default function Solution({ productId = 'endotherm' }: SolutionProps) {
                                 className="absolute inset-0"
                             >
                                 <Image
-                                    src={`${BASE_PATH}${isAfter ? product.afterImage : product.beforeImage}`}
+                                    src={isAfter ? product.afterImage : product.beforeImage}
                                     alt={isAfter ? `Nach ${product.name}` : 'Vorher'}
                                     fill
                                     className="object-contain"

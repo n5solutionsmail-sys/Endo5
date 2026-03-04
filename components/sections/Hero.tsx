@@ -1,6 +1,6 @@
 'use client';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 export default function Hero() {
     const scrollToContact = () => {
@@ -24,7 +24,7 @@ export default function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <img
-                    src={`${BASE_PATH}/A_forest_with_2k_202601202046.jpeg`}
+                    src="/A_forest_with_2k_202601202046.jpeg"
                     alt="Forest background"
                     className="w-full h-full object-cover"
                 />

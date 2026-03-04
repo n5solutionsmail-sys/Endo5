@@ -10,7 +10,7 @@ const navItems = [
     { label: 'Fallstudien', href: '#testimonials' },
 ];
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +61,7 @@ export default function Header() {
                         className={`relative transition-all duration-500 ${isScrolled ? 'h-14' : 'h-20'}`}
                     >
                         <Image
-                            src={`${BASE_PATH}/n5-logo.png`}
+                            src="/n5-logo.png"
                             alt="N5 Logo"
                             width={220}
                             height={88}

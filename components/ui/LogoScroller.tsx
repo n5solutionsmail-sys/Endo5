@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Endo5' : '';
+
 
 interface LogoScrollerProps {
     className?: string;
@@ -80,7 +80,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                                     >
                                         {/* Logo - larger size with hover scale */}
                                         <img
-                                            src={`${BASE_PATH}/logos/${logo.image}`}
+                                            src={`/logos/${logo.image}`}
                                             alt={logo.alt}
                                             className="h-14 w-auto object-contain cursor-pointer transition-transform duration-300 group-hover:scale-110"
                                         />
