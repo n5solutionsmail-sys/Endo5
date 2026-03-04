@@ -1,10 +1,9 @@
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
-import Solution from "@/components/sections/Solution";
 import Benefits from "@/components/sections/Benefits";
+import EndoCoolFAQ from "@/components/sections/EndoCoolFAQ";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
-import LogoScroller from "@/components/ui/LogoScroller";
 
 export default function CoolPage() {
   return (
@@ -17,12 +16,9 @@ export default function CoolPage() {
         <Benefits productId="endocool" />
       </div>
       <div className="section-divider">
-        <Solution productId="endocool" />
+        <EndoCoolFAQ />
       </div>
-      <div className="section-divider py-4 bg-slate-50">
-        <LogoScroller />
-      </div>
-      <div className="section-divider">
+<div className="section-divider">
         <Testimonials productId="endocool" />
       </div>
       <Contact />

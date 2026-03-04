@@ -36,23 +36,23 @@ export default function Problem() {
     }, []);
 
     return (
-        <section id="problem" className="pt-24 pb-8 bg-white relative overflow-hidden">
+        <section id="problem" className="pt-14 pb-8 bg-white relative overflow-hidden">
             <div className="container-custom">
 
                 {/* Minimal Header */}
                 <motion.div
-                    className="max-w-2xl mx-auto text-center mb-16"
+                    className="max-w-2xl mx-auto text-center mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                    <span className="inline-block bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
                         Die Realität
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight leading-tight">
                         Energiekosten steigen. <br />
-                        <span className="block mt-2 text-2xl md:text-3xl font-medium text-gray-500">
+                        <span className="block mt-2 text-xl md:text-2xl font-medium text-gray-500">
                             Ineffiziente Heiz- und Kühlanlagen belasten Gebäude und Budgets.
                         </span>
                     </h2>
@@ -60,11 +60,11 @@ export default function Problem() {
                 </motion.div>
 
                 {/* Technical Grid */}
-                <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
                     {problems.map((item, i) => (
                         <motion.div
                             key={i}
-                            className="group relative p-8 rounded-3xl border border-gray-100 bg-white hover:border-red-100 hover:shadow-lg hover:shadow-red-500/5 transition-all duration-300 overflow-hidden"
+                            className="group relative p-6 rounded-3xl border border-gray-100 bg-white hover:border-red-100 hover:shadow-lg hover:shadow-red-500/5 transition-all duration-300 overflow-hidden"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -89,7 +89,7 @@ export default function Problem() {
                                 </div>
 
                                 {/* Geometric accent */}
-                                <div className="mt-8 w-12 h-1 bg-gray-100 group-hover:bg-red-500 rounded-full transition-colors duration-500" />
+                                <div className="mt-4 w-12 h-1 bg-gray-100 group-hover:bg-red-500 rounded-full transition-colors duration-500" />
                             </div>
                         </motion.div>
                     ))}
@@ -97,7 +97,7 @@ export default function Problem() {
 
                 {/* Bridge to Solution */}
                 <motion.div
-                    className="mt-12 text-center"
+                    className="mt-8 text-center"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
