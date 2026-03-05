@@ -9,7 +9,7 @@ import LogoScroller from "@/components/ui/LogoScroller";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero product="endotherm" />
       <div className="section-divider">
         <Problem />
       </div>

@@ -8,7 +8,7 @@ import Contact from "@/components/sections/Contact";
 export default function CoolPage() {
   return (
     <>
-      <Hero />
+      <Hero product="endocool" />
       <div className="section-divider">
         <Problem />
       </div>
@@ -18,7 +18,7 @@ export default function CoolPage() {
       <div className="section-divider">
         <EndoCoolFAQ />
       </div>
-<div className="section-divider">
+      <div className="section-divider">
         <Testimonials productId="endocool" />
       </div>
       <Contact />

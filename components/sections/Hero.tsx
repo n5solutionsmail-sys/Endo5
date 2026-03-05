@@ -1,8 +1,10 @@
 'use client';
 
+interface HeroProps {
+    product?: 'endotherm' | 'endocool';
+}
 
-
-export default function Hero() {
+export default function Hero({ product = 'endotherm' }: HeroProps) {
     const scrollToContact = () => {
         const element = document.querySelector('#contact');
         if (element) {
@@ -10,14 +12,11 @@ export default function Hero() {
         }
     };
 
-    const scrollToSolution = (product: 'endotherm' | 'endocool') => {
-        const element = document.querySelector('#solution');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     const textShadow = '0 1px 2px rgba(0,0,0,0.3)';
+
+    const isEndoCool = product === 'endocool';
+    const productImage = isEndoCool ? '/images/hero-product.webp' : '/images/hero-product-2.webp';
+    const productAlt = isEndoCool ? 'EndoCool Produkt' : 'EndoTherm Produkt';
 
     return (
         <section className="relative min-h-screen">
@@ -38,46 +37,60 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 min-h-screen flex items-center pt-20">
-                <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
-                    <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="relative z-10 min-h-screen flex flex-col justify-center pt-24 pb-20">
+                <div className="w-full px-4 sm:px-6 lg:px-16 xl:px-24">
+                    <div className="max-w-7xl mx-auto">
 
-                        {/* Left product image */}
-                        <div className="hidden lg:flex flex-shrink-0 items-center justify-end -mt-32">
-                            <img
-                                src="/images/hero-product.webp"
-                                alt="EndoTherm Produkt"
-                                className="w-52 xl:w-60 object-contain drop-shadow-2xl"
-                                style={{ mixBlendMode: 'screen', maxHeight: '480px', transform: 'rotate(-8deg)', transformOrigin: 'bottom center' }}
-                                loading="eager"
-                            />
+                        {/* Top row: headline left, image right */}
+                        <div className="flex flex-row items-center gap-4">
+
+                            {/* Left: Headline + subtext */}
+                            <div className="flex-1 min-w-0">
+                                <h1
+                                    className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 whitespace-nowrap"
+                                    style={{ color: '#ffffff', textShadow }}
+                                >
+                                    Energiekosten senken.
+                                    <br />
+                                    <span className="text-blue-400">Einfach und effektiv.</span>
+                                </h1>
+
+                                <p
+                                    className="text-lg sm:text-xl leading-relaxed max-w-xl"
+                                    style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
+                                >
+                                    {isEndoCool ? (
+                                        <>
+                                            Unser Additiv steigert die Effizienz Ihrer
+                                            <br className="hidden sm:block" />
+                                            Kühlsysteme und senkt Ihre Energiekosten um bis zu 15%.
+                                        </>
+                                    ) : (
+                                        <>
+                                            Unser Additiv steigert die Effizienz Ihrer
+                                            <br className="hidden sm:block" />
+                                            Heizsysteme und senkt Ihre Energiekosten um bis zu 15%.
+                                        </>
+                                    )}
+                                </p>
+                            </div>
+
+                            {/* Right: product image */}
+                            <div className="hidden lg:flex flex-shrink-0 items-center justify-center">
+                                <img
+                                    src={productImage}
+                                    alt={productAlt}
+                                    className={isEndoCool ? 'w-60 xl:w-[260px] object-contain drop-shadow-2xl' : 'w-72 xl:w-[360px] object-contain drop-shadow-2xl'}
+                                    style={{ mixBlendMode: 'screen', maxHeight: isEndoCool ? '480px' : '600px', transform: isEndoCool ? 'rotate(8deg) translateX(-40px)' : 'rotate(8deg)', transformOrigin: 'bottom center' }}
+                                    loading="eager"
+                                />
+                            </div>
                         </div>
 
-                        {/* Text content – center */}
-                        <div className="flex-1 text-center min-w-0">
-
-                            {/* Headline */}
-                            <h1
-                                className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 whitespace-nowrap"
-                                style={{ color: '#ffffff', textShadow }}
-                            >
-                                Energiekosten senken.
-                                <br />
-                                <span className="text-blue-400">Einfach und effektiv.</span>
-                            </h1>
-
-                            {/* Subtext */}
-                            <p
-                                className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
-                                style={{ color: 'rgba(255,255,255,0.95)', textShadow }}
-                            >
-                                Unsere Additive steigern die Effizienz Ihrer
-                                <br className="hidden sm:block" />
-                                Heiz- und Kühlsysteme und senken Ihre Energiekosten um bis zu 15%.
-                            </p>
-
+                        {/* Bottom row: badges + buttons — centered across full width */}
+                        <div className="mt-16 flex flex-col items-center gap-5">
                             {/* Trust Badges */}
-                            <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+                            <div className="flex flex-wrap justify-center gap-3">
                                 <span
                                     className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
                                     style={{ background: 'rgba(0,0,0,0.3)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.1)' }}
@@ -94,7 +107,7 @@ export default function Hero() {
                                     <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                     </svg>
-                                    Heizung & Kühlung
+                                    Heizung &amp; Kühlung
                                 </span>
                                 <span
                                     className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
@@ -108,14 +121,11 @@ export default function Hero() {
                             </div>
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <div className="flex flex-col sm:flex-row gap-4">
                                 <button
                                     onClick={scrollToContact}
                                     className="px-8 py-4 text-base font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02]"
-                                    style={{
-                                        backgroundColor: '#3b82f6',
-                                        color: '#ffffff',
-                                    }}
+                                    style={{ backgroundColor: '#3b82f6', color: '#ffffff' }}
                                 >
                                     Kostenlose Beratung
                                 </button>
@@ -125,31 +135,17 @@ export default function Hero() {
                                         if (element) element.scrollIntoView({ behavior: 'smooth' });
                                     }}
                                     className="px-8 py-4 text-base font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02]"
-                                    style={{
-                                        backgroundColor: '#ffffff',
-                                        color: '#1f2937',
-                                        boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
-                                    }}
+                                    style={{ backgroundColor: '#ffffff', color: '#1f2937', boxShadow: '0 4px 14px rgba(0,0,0,0.1)' }}
                                 >
                                     Mehr erfahren
                                 </button>
                             </div>
                         </div>
 
-                        {/* Right product image */}
-                        <div className="hidden lg:flex flex-shrink-0 items-center justify-start -mt-8">
-                            <img
-                                src="/images/hero-product-2.webp"
-                                alt="EndoCool Produkt"
-                                className="w-56 xl:w-[270px] object-contain drop-shadow-2xl"
-                                style={{ mixBlendMode: 'screen', maxHeight: '546px', transform: 'rotate(8deg)', transformOrigin: 'bottom center' }}
-                                loading="eager"
-                            />
-                        </div>
-
                     </div>
                 </div>
             </div>
+
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
