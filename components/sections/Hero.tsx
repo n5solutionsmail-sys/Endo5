@@ -52,7 +52,7 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                 >
                                     Energiekosten senken.
                                     <br />
-                                    <span className="text-blue-400">Einfach und effektiv.</span>
+                                    Einfach und <span style={{ color: isEndoCool ? '#22d3ee' : '#cc2e14' }}>effektiv.</span>
                                 </h1>
 
                                 <p
