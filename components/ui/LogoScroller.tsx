@@ -1,8 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 
-
+const logos = [
+    { id: 1, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner', image: 'shell.png', alt: 'Shell Award' },
+    { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.webp', alt: 'H&V News Award' },
+    { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.webp', alt: 'CIBSE Award' },
+    { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.webp', alt: 'Energy Efficiency Award' },
+];
 
 interface LogoScrollerProps {
     className?: string;
@@ -13,30 +19,25 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
     const [isPaused, setIsPaused] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const logos = [
-        { id: 1, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner', image: 'shell.png', alt: 'Shell Award' },
-        { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.webp', alt: 'H&V News Award' },
-        { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.webp', alt: 'CIBSE Award' },
-        { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.webp', alt: 'Energy Efficiency Award' },
-    ];
-
-    // Auto-cycle through descriptions when not hovering
     useEffect(() => {
-        if (hoveredText) return; // Don't cycle when hovering
+        if (hoveredText) return;
 
         const interval = setInterval(() => {
             setIsFading(true);
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
                 setCurrentIndex((prev) => (prev + 1) % logos.length);
                 setIsFading(false);
             }, 300);
         }, 3000);
 
-        return () => clearInterval(interval);
-    }, [hoveredText, logos.length]);
+        return () => {
+            clearInterval(interval);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        };
+    }, [hoveredText]);
 
-    // Display text: show hovered text or auto-cycling text
     const displayText = hoveredText || logos[currentIndex].name;
 
     return (
@@ -61,7 +62,6 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                         className={`flex items-center gap-16 animate-scroll ${isPaused ? 'paused' : ''}`}
                         style={{ width: 'max-content' }}
                     >
-                        {/* Duplicate the logos multiple times for seamless infinite scroll */}
                         {[...Array(6)].map((_, setIndex) => (
                             <div key={setIndex} className="flex items-center gap-16 shrink-0">
                                 {logos.map((logo) => (
@@ -77,7 +77,6 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                                             setIsPaused(false);
                                         }}
                                     >
-                                        {/* Logo - larger size with hover scale */}
                                         <img
                                             src={`/logos/${logo.image}`}
                                             alt={logo.alt}
@@ -91,7 +90,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                 </div>
             </div>
 
-            {/* Award Description - Always visible, fades between descriptions */}
+            {/* Award Description */}
             <div className="h-8 mt-3 flex items-center justify-center">
                 <p
                     className={`text-xs font-medium text-slate-500 text-center whitespace-nowrap transition-opacity duration-300 ${isFading && !hoveredText ? 'opacity-0' : 'opacity-100'
@@ -99,6 +98,16 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                 >
                     {displayText}
                 </p>
+            </div>
+
+            {/* Link to studies page */}
+            <div className="text-center mt-2">
+                <Link
+                    href="/studien-und-belege"
+                    className="text-sm text-gray-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1"
+                >
+                    Empirische Studien und Belege →
+                </Link>
             </div>
 
             <style jsx>{`

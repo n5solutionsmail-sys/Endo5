@@ -111,8 +111,7 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                     style={{
                                         mixBlendMode: 'screen',
                                         maxHeight: isEndoCool ? '500px' : '580px',
-                                        transform: isEndoCool ? 'rotate(6deg)' : 'rotate(6deg)',
-                                        transformOrigin: 'bottom center',
+                                        transform: 'none',
                                     }}
                                     loading="eager"
                                 />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -13,19 +14,25 @@ const navItems = [
 
 
 export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
+    const pathname = usePathname();
+    const isHomePage = pathname === '/' || pathname === '/cool';
+    const [isScrolled, setIsScrolled] = useState(!isHomePage);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const productsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        if (!isHomePage) {
+            setIsScrolled(true);
+            return;
+        }
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 80);
         };
         window.addEventListener('scroll', handleScroll);
         handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isHomePage]);
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
@@ -38,6 +45,12 @@ export default function Header() {
     }, []);
 
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (!isHomePage) {
+            // On subpages, navigate to homepage with anchor
+            e.preventDefault();
+            window.location.href = '/' + href;
+            return;
+        }
         e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
