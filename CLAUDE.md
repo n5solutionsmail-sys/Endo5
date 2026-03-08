@@ -71,6 +71,10 @@ The `next.config.ts` conditionally sets `output: "export"` and `basePath: "/Endo
 
 - `OPENAI_API_KEY` — Required for the `/api/chat` endpoint (GPT-4o chatbot)
 
+## Turbopack Gotcha
+
+Never leave extra `node_modules`-like directories (e.g. `zz_node_modules_old_disabled/`) inside the project root. Turbopack scans the entire project directory for module resolution — stale directories with thousands of files will cause `○ Compiling / ...` to hang indefinitely.
+
 ## Important Notes
 
 - The chatbot API route (`/api/chat`) only works in dev mode — it's excluded from the static export

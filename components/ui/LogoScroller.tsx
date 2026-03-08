@@ -2,13 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-
-const logos = [
-    { id: 1, name: 'Shell Springboard 2018 Low Carbon Innovation Regionaler Gewinner', image: 'shell.png', alt: 'Shell Award' },
-    { id: 2, name: 'H&V NEWS AWARDS 2015 DOMESTIC H&V PRODUCT OF THE YEAR', image: 'hv-news-award.webp', alt: 'H&V News Award' },
-    { id: 3, name: 'CIBSE BUILDING PERFORMANCE AWARDS 2016 - ENERGY SAVING PRODUCT OF THE YEAR', image: 'cibse-award.webp', alt: 'CIBSE Award' },
-    { id: 4, name: 'ENERGY EFFICIENCY & HEALTHY HOMES REGIONAL AWARDS 2017 SMALL SCALE PROJECT OF THE YEAR', image: 'energy-efficiency-award.webp', alt: 'Energy Efficiency Award' },
-];
+import { awards } from '@/data/awards';
 
 interface LogoScrollerProps {
     className?: string;
@@ -27,7 +21,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
         const interval = setInterval(() => {
             setIsFading(true);
             timeoutRef.current = setTimeout(() => {
-                setCurrentIndex((prev) => (prev + 1) % logos.length);
+                setCurrentIndex((prev) => (prev + 1) % awards.length);
                 setIsFading(false);
             }, 300);
         }, 3000);
@@ -38,7 +32,7 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
         };
     }, [hoveredText]);
 
-    const displayText = hoveredText || logos[currentIndex].name;
+    const displayText = hoveredText || awards[currentIndex].name;
 
     return (
         <div className={`relative w-full max-w-6xl mx-auto py-4 px-4 ${className}`}>
@@ -64,12 +58,12 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                     >
                         {[...Array(6)].map((_, setIndex) => (
                             <div key={setIndex} className="flex items-center gap-16 shrink-0">
-                                {logos.map((logo) => (
+                                {awards.map((award) => (
                                     <div
-                                        key={`${setIndex}-${logo.id}`}
+                                        key={`${setIndex}-${award.id}`}
                                         className="group relative flex flex-col items-center justify-center"
                                         onMouseEnter={() => {
-                                            setHoveredText(logo.name);
+                                            setHoveredText(award.name);
                                             setIsPaused(true);
                                         }}
                                         onMouseLeave={() => {
@@ -77,11 +71,13 @@ export default function LogoScroller({ className = '' }: LogoScrollerProps) {
                                             setIsPaused(false);
                                         }}
                                     >
-                                        <img
-                                            src={`/logos/${logo.image}`}
-                                            alt={logo.alt}
-                                            className="h-14 w-auto object-contain cursor-pointer transition-transform duration-300 group-hover:scale-110"
-                                        />
+                                        <Link href={`/auszeichnungen/${award.slug}`} target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                src={`/logos/${award.image}`}
+                                                alt={award.alt}
+                                                className="h-14 w-auto object-contain cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                                            />
+                                        </Link>
                                     </div>
                                 ))}
                             </div>

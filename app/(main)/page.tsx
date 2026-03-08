@@ -5,6 +5,7 @@ import Benefits from "@/components/sections/Benefits";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 import LogoScroller from "@/components/ui/LogoScroller";
+import EndoThermFAQ from "@/components/sections/EndoThermFAQ";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
       </div>
       <div className="section-divider">
         <Testimonials productId="endotherm" />
+      </div>
+      <div className="section-divider">
+        <EndoThermFAQ />
       </div>
       <Contact />
     </>

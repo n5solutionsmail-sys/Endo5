@@ -132,10 +132,10 @@ export default function Solution({ productId = 'endotherm' }: SolutionProps) {
                                         )}
                                     </div>
                                     <div>
-                                        <h4 className={`font-semibold text-sm ${isAfter ? 'text-gray-900' : 'text-red-800'}`}>
+                                        <h4 className={`font-semibold text-base ${isAfter ? 'text-gray-900' : 'text-red-800'}`}>
                                             {item.title}
                                         </h4>
-                                        <p className={`text-sm ${isAfter ? 'text-gray-600' : 'text-red-600/60'}`}>
+                                        <p className={`text-base ${isAfter ? 'text-gray-600' : 'text-red-600/60'}`}>
                                             {item.desc}
                                         </p>
                                     </div>
