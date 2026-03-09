@@ -35,6 +35,7 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
         },
     };
 
+
     const fadeScale = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: {
@@ -119,12 +120,9 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                 </motion.div>
 
                                 {/* Trust Badges */}
-                                <motion.div
-                                    className="flex flex-wrap justify-center lg:justify-start gap-2.5"
-                                    variants={fadeUp}
-                                >
-                                    {trustBadges.map((label) => (
-                                        <span
+                                <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
+                                    {trustBadges.map((label, i) => (
+                                        <motion.span
                                             key={label}
                                             className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[13px] font-medium"
                                             style={{
@@ -134,21 +132,21 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                                 WebkitBackdropFilter: 'blur(12px)',
                                                 border: '1px solid rgba(255,255,255,0.12)',
                                             }}
+                                            initial={{ opacity: 0, y: 16 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.5, delay: 0.55, ease: [0.25, 0.46, 0.45, 0.94] as const }}
                                         >
                                             <svg className="w-3.5 h-3.5 flex-shrink-0" style={{ color: '#4ade80' }} fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                             </svg>
                                             {label}
-                                        </span>
+                                        </motion.span>
                                     ))}
-                                </motion.div>
+                                </div>
 
                                 {/* CTA Buttons */}
-                                <motion.div
-                                    className="flex flex-col sm:flex-row gap-3 pt-1 w-full sm:w-auto"
-                                    variants={fadeUp}
-                                >
-                                    <button
+                                <div className="flex flex-col sm:flex-row gap-3 pt-1 w-full sm:w-auto">
+                                    <motion.button
                                         onClick={scrollToContact}
                                         className="w-full sm:w-auto px-8 py-3.5 text-[15px] font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                                         style={{
@@ -156,10 +154,13 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                             color: '#ffffff',
                                             boxShadow: '0 4px 14px rgba(59, 130, 246, 0.4), 0 1px 3px rgba(0,0,0,0.1)',
                                         }}
+                                        initial={{ opacity: 0, y: 16 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.67, ease: [0.25, 0.46, 0.45, 0.94] as const }}
                                     >
                                         Kostenlose Beratung
-                                    </button>
-                                    <button
+                                    </motion.button>
+                                    <motion.button
                                         onClick={() => {
                                             const element = document.querySelector('#problem');
                                             if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -172,10 +173,13 @@ export default function Hero({ product = 'endotherm' }: HeroProps) {
                                             WebkitBackdropFilter: 'blur(12px)',
                                             border: '1px solid rgba(255,255,255,0.2)',
                                         }}
+                                        initial={{ opacity: 0, y: 16 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.67, ease: [0.25, 0.46, 0.45, 0.94] as const }}
                                     >
                                         Mehr erfahren
-                                    </button>
-                                </motion.div>
+                                    </motion.button>
+                                </div>
                             </motion.div>
 
                             {/* Right: Product image — desktop only */}
